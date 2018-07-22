@@ -1,0 +1,12 @@
+class CreateOrders < ActiveRecord::Migration[5.2]
+  def change
+    create_table :orders do |t|
+      t.date :date_order
+      t.references :formation, foreign_key: true
+      t.references :user, foreign_key: true
+      t.boolean :valide
+
+      t.timestamps
+    end
+  end
+end

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  formations_count: MyString
+
+two:
+  title: MyString
+  formations_count: MyString

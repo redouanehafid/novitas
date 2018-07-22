@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  code: MyString
+  title: MyString
+  volume: MyString
+  objectifs: MyText
+  prerequis: MyText
+  programme: MyText
+  intervenants: MyText
+  public_concerne: MyText
+  les_plus: MyText
+  certifications: MyText
+  cgf: MyText
+  lieu: MyString
+  duree: 1
+  tarif: 1.5
+  category: one
+  online: false
+
+two:
+  code: MyString
+  title: MyString
+  volume: MyString
+  objectifs: MyText
+  prerequis: MyText
+  programme: MyText
+  intervenants: MyText
+  public_concerne: MyText
+  les_plus: MyText
+  certifications: MyText
+  cgf: MyText
+  lieu: MyString
+  duree: 1
+  tarif: 1.5
+  category: two
+  online: false

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date_order: 2018-07-22
+  formation: one
+  user: one
+  valide: false
+
+two:
+  date_order: 2018-07-22
+  formation: two
+  user: two
+  valide: false

@@ -1,0 +1,28 @@
+<h1>les categories</h1>
+
+<p>
+<%= link_to "Ajouter une nouvelle catégorie", new_admin_category_path, class:"btn btn-primary" %>
+</p>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Titre</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each do |catecory| %>
+        <tr>
+            <th scope="col"><%= catecory.title %></th>
+            <th scope="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <%= link_to "Modifier", edit_admin_category_path(catecory), class:"btn btn-secondary" %>
+                    <%= link_to "Supprimer", admin_category_path(catecory),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
+                </div>
+            </th>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+

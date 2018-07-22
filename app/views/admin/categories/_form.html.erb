@@ -1,0 +1,4 @@
+<%= simple_form_for [:admin, @category] do |f| %>
+<%= f.input :title %>
+<%= f.button :submit, @category.new_record? ? "Ajouter" : "Modifier", class: "btn btn-primary" %>
+<% end %>
