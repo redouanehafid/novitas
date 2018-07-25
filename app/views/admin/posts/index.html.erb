@@ -1,1 +1,33 @@
 <h1>les articles</h1>
+
+<p>
+<%= link_to "Ajouter une nouvelle article", new_admin_post_path, class:"btn btn-primary" %>
+</p>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Titre</th>
+      <th scope="col">Enligne</th>
+      <th scope="col">Contenu</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @posts.each do |post| %>
+        <tr>
+            <th scope="col"><%= post.title %></th>
+            <th scope="col"><%= post.online ? image_tag('enligne') : image_tag('horsligne') %></th>
+            <th scope="col"><%= truncate(post.content, length: 50) %></th>
+            <th scope="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <%= link_to "Voir", admin_post_path(post), class:"btn btn-secondary" %>
+                    <%= link_to "Modifier", edit_admin_post_path(post), class:"btn btn-success" %>
+                    <%= link_to "Supprimer", admin_post_path(post),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
+                </div>
+            </th>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+

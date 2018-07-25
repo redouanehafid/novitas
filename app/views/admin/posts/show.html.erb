@@ -1,0 +1,52 @@
+<h1> <%= @post.title %> </h1>
+<p> Enligne: <%= @post.online ? image_tag('enligne') : image_tag('horsligne') %> </p>
+<p> <%= @post.content %> </p>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <%= link_to "Tous les articles", admin_posts_path, class:"btn btn-secondary" %>
+    <%= link_to "Modifier", edit_admin_post_path(@post), class:"btn btn-success" %>
+    <%= link_to "Supprimer", admin_post_path(@post),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
+</div>
+
+<div class="container formComment">
+    <%= simple_form_for([:admin, @post, @post.comments.build]) do |f| %>
+        <%= f.input :content, label: "Commenter l'article" %>
+        <%= f.button :submit, "Commenter", class: "btn btn-primary" %>
+    <% end %>
+</div>
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <% @comments.each do |comment| %>
+            <div class="col-sm-12">
+                <div class="panel panel-white post panel-shadow">
+                    <div class="row">
+                        <div class="post-heading col-sm-2 col-lg-1">
+                            <div class="pull-left image">
+                                <img src="http://bootdey.com/img/Content/user_1.jpg" class="img-circle avatar" alt="user profile image">
+                            </div>
+                            
+                        </div> 
+                        <div class="post-description col-sm-7 col-lg-9"> 
+                            <div class="pull-left meta">
+                                <div class="title h5">
+                                    <h5><%= comment.user.email %>
+                                    <span class="badge badge-secondary"><%= time_ago_in_words(comment.created_at) %></span></h5>
+                                </div>
+                            </div>
+                            <p><%= comment.content %></p>
+                        </div>
+                    
+                        <div class="col-sm-3 col-lg-2 btnSuppComment">
+                            <%= link_to 'Supprimer', admin_post_comment_path(@post, comment), method: :delete, data: { confirm: 'Vous êtes sûr?' } ,class: 'btn btn-secondary' %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+</div>

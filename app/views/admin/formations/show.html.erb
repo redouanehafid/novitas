@@ -1,0 +1,9 @@
+<h1> <%= @formation.title %> </h1>
+<p> Enligne: <%= @formation.online ? image_tag('enligne') : image_tag('horsligne') %> </p>
+<p> <%= @formation.objectifs %> </p>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <%= link_to "Tous les formations", admin_formations_path, class:"btn btn-secondary" %>
+    <%= link_to "Modifier", edit_admin_formation_path(@formation), class:"btn btn-success" %>
+    <%= link_to "Supprimer", admin_formation_path(@formation),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
+</div>

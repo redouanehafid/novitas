@@ -1,1 +1,33 @@
-<h1>les formations</h1>
+<h1>les articles</h1>
+
+<p>
+<%= link_to "Ajouter une nouvelle fotmation", new_admin_formation_path, class:"btn btn-primary" %>
+</p>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Enligne</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @formations.each do |formation| %>
+        <tr>
+            <th scope="col"><%= formation.code %></th>
+            <th scope="col"><%= formation.title %></th>
+            <th scope="col"><%= formation.online ? image_tag('enligne') : image_tag('horsligne') %></th>
+            <th scope="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <%= link_to "Voir", admin_formation_path(formation), class:"btn btn-secondary" %>
+                    <%= link_to "Modifier", edit_admin_formation_path(formation), class:"btn btn-success" %>
+                    <%= link_to "Supprimer", admin_formation_path(formation),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
+                </div>
+            </th>
+        </tr>
+    <% end %>
+  </tbody>
+</table>
+

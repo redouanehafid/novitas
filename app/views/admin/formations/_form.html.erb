@@ -1,0 +1,19 @@
+<%= simple_form_for [:admin, @formation] do |f| %>
+<%= f.input :online %>
+<%= f.input :code %>
+<%= f.input :title %>
+<%= f.input :volume %>
+<%= f.input :objectifs %>
+<%= f.input :prerequis %>
+<%= f.input :programme %>
+<%= f.input :intervenants %>
+<%= f.input :public_concerne %>
+<%= f.input :les_plus %>
+<%= f.input :certifications %>
+<%= f.input :cgf %>
+<%= f.input :lieu %>
+<%= f.input :duree %>
+<%= f.input :tarif %>
+<%= f.association :category, include_blank: false %>
+<%= f.button :submit, @formation.new_record? ? "Ajouter" : "Modifier", class: "btn btn-primary" %>
+<% end %>

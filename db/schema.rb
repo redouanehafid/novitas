@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_22_190036) do
+ActiveRecord::Schema.define(version: 2018_07_24_194415) do
 
   create_table "categories", force: :cascade do |t|
     t.string "title"
-    t.string "formations_count"
+    t.integer "formations_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 2018_07_22_190036) do
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
-    t.string "comments_count"
+    t.integer "comments_count", default: 0
     t.boolean "online"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
