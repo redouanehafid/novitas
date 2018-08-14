@@ -31,12 +31,21 @@ gem 'rails-i18n', '~> 5.1'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 gem 'devise-bootstrap-views'
 gem 'devise-i18n-views'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
+gem 'acts-as-taggable-on', '~> 6.0'
+# gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'kaminari', '~> 1.1', '>= 1.1.1'
+gem 'jquery-sliders-rails'
+gem 'fancybox2-rails'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
@@ -61,6 +70,15 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+end
+
+group :development do
+  # Développement
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

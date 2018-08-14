@@ -22,7 +22,7 @@
             <th scope="col">
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <%= link_to "Voir", admin_formation_path(formation), class:"btn btn-secondary" %>
-                    <%= link_to "Modifier", edit_admin_formation_path(formation), class:"btn btn-success" %>
+                    <%= link_to "Modifier", edit_admin_formation_path(formation), class:"btn btn-secondary" %>
                     <%= link_to "Supprimer", admin_formation_path(formation),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
                 </div>
             </th>

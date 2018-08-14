@@ -11,7 +11,13 @@
 // about supported directives.
 //
 //= require jquery
+//= require fancybox
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require jquery.sliders
 //= require_tree .
+
+
+$("a.fancybox").fancybox();
+  

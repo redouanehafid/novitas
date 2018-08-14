@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Novitas</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <%= stylesheet_link_tag    'styladmin', media: 'all' %>
+  </head>
+
+  <body>
+  <div class="bod-ad">
+
+    
+  <aside id="left-panel" class="left-panel">
+  <nav class="navbar-ad">
+
+      <div class="navbar-ad-header">
+            <a class="logo" href="<%= root_path %>">
+                 <%= image_tag("logo.png", alt: "logo") %>
+            </a>
+      </div>
+
+      <div id="main-menu" class="main-menu ">
+          <ul class="nav navbar-ad-nav">
+              
+              <h3 class="menu-title">Menu Principal</h3><!-- /.menu-title -->
+              <li class="active">
+                  <a href="<%= admin_categories_path %>"> Categories </a>
+              </li>
+              <li>
+                  <a href="<%= admin_formations_path %>"> Formations </a>
+              </li>
+              <li>
+                  <a href="<%= admin_posts_path %>"> Articles </a>
+              </li>
+              <li>
+                  <a href="<%= admin_orders_path %>"> Commandes </a>
+              </li>
+          </ul>
+      </div><!-- /.navbar-ad-collapse -->
+  </nav>
+</aside><!-- /#left-panel -->
+
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <header id="header" class="header">
+        <p class="menu-header-ad"><%= link_to (fa_icon "power-off"), destroy_user_session_path, method: :delete %></p>
+        <div class="header-menu">
+
+            <h3>NOVITAS</h3>
+            
+           
+          
+        </div>
+    </header>
+
+    <div class="breadcrumbs">
+        <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <div class="container">
+      <%= yield %>
+    </div>
+    </div>
+
+    
+</div>
+</div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </body>
+</html>

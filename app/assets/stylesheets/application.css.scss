@@ -1,0 +1,51 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require fancybox
+ *= require jquery.sliders
+ *= require_self
+
+ */
+ 
+ @import "font-awesome";
+ 
+ #tag_cloud {
+     .s {font-size: 0.7em }
+     .m {font-size: 1em }
+     .l {font-size: 1.4em }
+ }
+.entettext {
+    padding-left: 80px;
+    padding-top: 100px;
+    
+}
+.monentete {
+	background-image: image-url("page-background.jpg");
+}
+.indexentete {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),image-url("home-background.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    height: 600px;
+}
+.indexfond1 {
+	background-image: image-url("cta1-background.jpg");
+}
+.indexfond2 {
+	background-image: image-url("cta2-background.jpg");
+}
+
+@import 'olive-theme.css.scss';

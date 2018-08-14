@@ -1,6 +1,8 @@
 class Admin::PostsController < ApplicationController
-
+	before_action :authenticate_user!
+  before_action :is_admin?
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
+	layout "applicationadmin"
 
 	def index
         @posts = Post.all.order("online DESC")

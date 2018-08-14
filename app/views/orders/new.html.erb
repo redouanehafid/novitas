@@ -1,0 +1,143 @@
+ <!--Page Title-->
+    <section class="page-title" style="background-image:url(./assets/build/images/background/3.jpg);">
+        <div class="auto-container">
+            <h1>Details de la formation "code : <%= @formation.code %>"</h1>
+        </div>
+        <!--Page Info-->
+        <div class="page-info">
+            <div class="auto-container clearfix">
+                <div class="pull-left">
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="index.php">Home</a></li>
+                        <li>Nos Formations</li>
+                    </ul>
+                </div>
+                <div class="pull-right">
+                    <div class="share-icon"><a href="#"><span class="icon fa fa-share-alt"></span> Share</a></div>
+                </div>
+            </div>
+        </div>
+        <!--End Page Info-->
+    </section>
+    <!--End Page Title-->
+    
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+            	
+                <!--Content Side-->
+                <div class="content-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
+					<div class="shop-single">
+                    <div class="product-details">
+
+                        <!--Basic Details-->
+                        <div class="basic-details">
+                            <div class="row clearfix">
+                                <div class="row">
+                                <%= image_tag("blog01.jpg", alt: "") %>
+                                    <div class="details-header" style="
+                                         position: relative;margin-bottom: 20px;border: 2px solid #B6BC3F !important;padding: 12px 23px;">
+                                         
+                                        <h4 style="color: #137879">
+                                            <%= @formation.title %> </h4>
+                                            <p style="position: relative;padding: 5px 5px; margin-top: 20px;">
+                                            <i class="fa fa-map-marker" aria-hidden="true"></i> Lieu : <%= @formation.lieu %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="fa fa-clock-o" aria-hidden="true"></i> Durèe : <%= @formation.duree %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="fa fa-credit-card" aria-hidden="true"></i> Tarif : <%= @formation.tarif %> Dhs
+                                            </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Basic Details-->
+                    </div>
+                </div>
+                </div>
+                <!--Sidebar Side-->
+                <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                	<aside class="sidebar default-sidebar with-border">
+					
+                    	<!-- Search -->
+                         <div class="sidebar-widget search-box">
+                        	<%= form_tag formations_path, :method => 'get' do %>
+                                <div class="form-group">
+                                    <% if params[:search].present? %>
+                                        <%= text_field_tag :search,nil, class:"input", value:"#{params[:search]}" %>
+                                    <% else %>
+                                        <%= text_field_tag :search,nil, class:"input", placeholder:"Trouvez une formation ... " %>
+                                    <% end %>
+                                    <%= button_tag fa_icon "search" %>
+                                </div>
+                            <% end %>
+						</div>
+                    
+                    	<!--Blog Category Widget-->
+                        <div class="sidebar-widget sidebar-blog-category">
+                            <div class="sidebar-title">
+                                <h2>Categories</h2>
+                            </div>
+                            <ul class="blog-cat">
+                                <li><a href="<%= formations_path %>">Toutes les formations <span> (<%= @nbrformation %>) </span></a></li>
+                                <% @categories.each do |category| %>
+                                    <li><a href="<%= formations_path(categorie: category.id) %>"><%= category.title %> 
+                                        <span>(<%= category.formations_count.present? ? category.formations_count : 0 %>)</span></a>
+                                    </li>
+                                <% end %>
+                            </ul>
+                        </div>
+                    
+                    	<!-- Popular Posts -->
+                        <div class="sidebar-widget popular-posts">
+                            <div class="sidebar-title"><h2>Formations populaires</h2></div>
+
+                            <article class="post">
+                            	<figure class="post-thumb"><%= image_tag("post03.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
+                                <div class="text"><a href="blog-single.html">6 ways to keep in control your debtors</a></div>
+                                <div class="post-info">April 18, 2017</div>
+                            </article>
+                            
+                            <article class="post">
+                            	<figure class="post-thumb"><%= image_tag("post01.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
+                                <div class="text"><a href="blog-single.html">What a finance director could add business</a></div>
+                                <div class="post-info">February 14, 2017</div>
+                            </article>
+                            
+                            <article class="post">
+                            	<figure class="post-thumb"><%= image_tag("post03.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
+                                <div class="text"><a href="blog-single.html">Tips for sucess in 2016: Ways to grow your business</a></div>
+                                <div class="post-info">January 16, 2017</div>
+                            </article>
+                            
+						</div>
+                    	
+                        <!-- Popular Tags -->
+                        <div class="sidebar-widget popular-tags">
+                            <div class="sidebar-title"><h2>Mots clés</h2></div>
+                                <div id="tag_cloud">
+                                    <% tag_cloud Formation.tag_counts, %w[s m l] do |tag, css_class| %>
+                                        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+                                    <% end %>
+                                </div>
+                        </div>
+                        
+                    </aside>
+                </div>
+                <!--End Sidebar Side-->
+         </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

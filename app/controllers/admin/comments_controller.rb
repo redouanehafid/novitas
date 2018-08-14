@@ -1,5 +1,8 @@
 class Admin::CommentsController < ApplicationController
-
+	before_action :authenticate_user!
+	before_action :is_admin?
+	layout "applicationadmin"
+	
     def create
 		@post = Post.find(params[:post_id])
         @comment = Comment.create(params[:comment].permit(:content))

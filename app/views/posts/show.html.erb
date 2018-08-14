@@ -1,0 +1,111 @@
+ <!--Page Title-->
+    <section class="page-title" style="background-image:url(./assets/build/images/background/3.jpg);">
+        <div class="auto-container">
+            <h1>Details de l'article</h1>
+        </div>
+        <!--Page Info-->
+        <div class="page-info">
+            <div class="auto-container clearfix">
+                <div class="pull-left">
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="index.php">Home</a></li>
+                        <li>Artciles</li>
+                    </ul>
+                </div>
+                <div class="pull-right">
+                    <div class="share-icon"><a href="#"><span class="icon fa fa-share-alt"></span> Share</a></div>
+                </div>
+            </div>
+        </div>
+        <!--End Page Info-->
+    </section>
+    <!--End Page Title-->
+    
+    <!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+            	
+                <!--Content Side-->
+                <div class="content-side col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                      
+                    <div class="blog-single">
+                    	<div class="inner-box">
+                        	<div class="image">
+								<%= image_tag("page-background.jpg") %>
+                        	</div>
+                            <div class="lower-content">
+                            	<ul class="post-meta">
+                                    <li><span class="icon fa fa-calendar"></span>September 21, 2017</li>
+                                    <li><span class="icon fa fa-comments"></span><%= @post.comments_count %> Commentaires</li>
+                                </ul>
+                            	<h3><%= @post.title %> </h3>
+                                <div class="text">
+                                	<p><%= @post.content %></p>
+                                </div>
+                                
+                                <!--post-share-options-->
+                                <div class="post-share-options clearfix">
+                                     <ul class="pull-right social-icon-three clearfix">
+                                        <li class="share">Partager l'article <span class="fa fa-share-alt"></span></li>
+                                        <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                    </ul>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!--Comments Area-->
+                    <div class="comments-area">
+                        <div class="group-title"><h2>Les commentaires</h2></div>
+
+                         <!-- Comment Form -->
+                        <div class="comment-form">	
+                            <%= simple_form_for([@post, @post.comments.build]) do |f| %>
+                                <div class="row clearfix">
+                                    <% if user_signed_in? %>
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                            <%= f.input :content, label: "Commenter l'article" %>
+                                        </div>
+                                        
+                                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 form-group">
+                                            <%= f.button :submit, "Commenter", class: "theme-btn btn-style-one" %>
+                                        </div>
+                                    <% end %>
+                                </div>
+                            <% end %>
+                        </div>
+                        <br>
+                        <!--Comment Box-->
+                        <% if @post.comments_count > 0  %>
+                            <h3><%= @post.comments_count %> Commentaires </h3>
+                            <% @comments.each do |comment| %>
+                                 <% if !comment.content.blank? %>
+                                    <div class="comment-box">
+                                        <div class="comment">
+                                            <div class="author-thumb"><%= image_tag("images.jpg") %></div>
+                                            <div class="comment-inner">
+                                                <div class="comment-info clearfix"><%= comment.user.email %> – Sep 17, 2016:
+                                                <% if user_signed_in? && comment.user_id == current_user.id %>
+                                                    <%= link_to 'Supprimer', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Vous êtes sûr?' } ,class: 'btn btn-secondary' %>
+                                                <% end %>
+                                                </div>
+                                                
+                                                <div class="text"><%= comment.content %></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            <% end %>
+                        <% end %>
+                    </div>
+                 </div>
+                <!--End Sidebar Side-->
+         </div>
+    </div>
+</div>
