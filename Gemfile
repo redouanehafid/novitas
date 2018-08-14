@@ -87,6 +87,3 @@ platform :mswin, :mingw, :x64_mingw do
   gem 'win32-api'
 end
 
-group :development do
-  gem 'wdm', '>= 0.1.0' if Gem.win_platform?
-end
