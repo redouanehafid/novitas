@@ -82,8 +82,11 @@ group :development do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-platform :mswin, :mingw, :x64_mingw do
-  gem "tzinfo-data"
-  gem 'win32-api'
-end
+platforms 'mswin', 'mingw', 'mswin64', 'x64_mingw' do
+  gem 'tzinfo-data'
 
+  group :test do
+    gem 'wdm', '>= 0.1.0'
+    gem 'win32console', require: false
+  end
+end
