@@ -89,7 +89,6 @@ platforms 'mswin', 'mingw', 'mswin64', 'x64_mingw' do
   gem 'tzinfo-data'
 
   group :test do
-    gem 'wdm', '>= 0.1.0'
     gem 'win32console', require: false
   end
 end
