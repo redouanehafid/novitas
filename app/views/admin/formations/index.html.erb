@@ -18,7 +18,7 @@
         <tr>
             <th scope="col"><%= formation.code %></th>
             <th scope="col"><%= formation.title %></th>
-            <th scope="col"><%= formation.online ? '<span class="badge badge-primary">Success</span>'.html_safe : '<span class="badge badge-primary">Danger</span>'.html_safe %></th>
+            <th scope="col"><%= formation.online ? '<span class="badge badge-success">Enligne</span>'.html_safe : '<span class="badge badge-danger">Horligne</span>'.html_safe %></th>
             <th scope="col">
                 <div class="btn-group" role="group" aria-label="Basic example">
                     <%= link_to "Voir", admin_formation_path(formation), class:"btn btn-secondary" %>
