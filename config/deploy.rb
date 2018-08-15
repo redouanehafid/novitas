@@ -33,6 +33,13 @@ set :nginx_config_name, 'novitas_ma'
 set :nginx_server_name, 'novitas.ma'
 set :puma_workers, 2
 
+namespace :deploy do
+    desc "reload the database with seed data"
+    task :seed do
+      run "cd #{current_path}; rake db:seed RAILS_ENV=#{rails_env}"
+    end
+end
+
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
