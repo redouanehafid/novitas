@@ -37,7 +37,7 @@
                         	</div>
                             <div class="lower-content">
                             	<ul class="post-meta">
-                                    <li><span class="icon fa fa-calendar"></span>September 21, 2017</li>
+                                    <li><span class="icon fa fa-calendar"></span><%= time_ago_in_words(@post.created_at) %></li>
                                     <li><span class="icon fa fa-comments"></span><%= @post.comments_count %> Commentaires</li>
                                 </ul>
                             	<h3><%= @post.title %> </h3>
@@ -90,7 +90,7 @@
                                         <div class="comment">
                                             <div class="author-thumb"><%= image_tag comment.user.image.url(:thumb) %></div>
                                             <div class="comment-inner">
-                                                <div class="comment-info clearfix"><%= comment.user.email %> – Sep 17, 2016:
+                                                <div class="comment-info clearfix"><%= comment.user.email %> – <%= time_ago_in_words(comment.created_at) %>:
                                                 <% if user_signed_in? && comment.user_id == current_user.id %>
                                                     <%= link_to 'Supprimer', post_comment_path(@post, comment), method: :delete, data: { confirm: 'Vous êtes sûr?' } ,class: 'btn btn-secondary' %>
                                                 <% end %>

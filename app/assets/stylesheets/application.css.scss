@@ -49,3 +49,21 @@
 }
 
 @import 'olive-theme.css.scss';
+
+.imagepostfooter {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    max-width: 100px;
+}
+.post-date {
+    position: relative;
+    color: #fa9928;
+    font-size: 16px;
+    font-weight: 300;
+    margin-bottom: 2px;
+    left: 60px;
+}
+.textfooter {
+    left: 60px;
+}

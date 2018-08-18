@@ -15,7 +15,8 @@
                 </div>
                 
                 <div class="tp-caption tp-resizeme">
-                    <a href="about.html" class="theme-btn btn-style-one">Read More</a> &ensp; <a href="contact.html" class="theme-btn btn-style-two">Contact us</a>
+                    <a href="<%= apropos_path %>" class="theme-btn btn-style-one">Nous Connaitre</a> &ensp; 
+                    <a href="<%= contact_path %>" class="theme-btn btn-style-two">Contacter nous</a>
                 </div>
                 
                 </li>
@@ -148,7 +149,7 @@
             <div class="title-column col-md-3 col-sm-12 col-xs-12">
                 <!--Sec Title-->
                 <div class="sec-title light">
-                    <h2>NOS FORMATIONS</h2>
+                    <h2>DERNIERES FORMATIONS</h2>
                     <div class="separator"></div>
                 </div>
                 <div class="text">
@@ -168,9 +169,7 @@
                                 </div>
                                 <div class="content">
                                     <h3><a href="<%= formation_path(formation.id) %>"><%= truncate(formation.title, length: 40) %></a></h3>
-                                    <div class="text"> -À  la fin de la formation, vous serez en mesure de: 
-                                        Réussir  sereinement l'examen d'obtention de la certification SAP Finance 
-                                        Avoir les acquis nécéssaire pour exceller l'utilisation...
+                                    <div class="text"> <%= truncate(formation.objectifs, length: 60) %>
                                     </div>
                                 </div>
                             </div>
@@ -189,11 +188,11 @@
     <div class="auto-container">
         <div class="sec-title clearfix">
             <div class="pull-left">
-                <h2>Latest Projects</h2>
+                <h2>Derniers Articles</h2>
                 <div class="separator"></div>
             </div>
             <div class="pull-right">
-                <a href="projects.html" class="theme-btn btn-style-three">Voir tous les artciles</a>
+                <a href="<%= articles_path %>" class="theme-btn btn-style-three">Voir tous les artciles</a>
             </div>
         </div>
         
@@ -205,11 +204,10 @@
                 <div class="news-block-two col-md-4 col-sm-4 col-xs-6">
                     <div class="inner-box">
                         <div class="image">
-                            <%= image_tag("page-background.jpg") %>
-                            <div class="tag">Consulting</div>
+                            <%= image_tag article.image.url(:thumb) %>
                         </div>
                         <div class="lower-content">
-                            <div class="post-date">September 21, 2017</div>
+                            <div class="post-date"><%= time_ago_in_words(article.created_at) %></div>
                             <h3><a href="<%= post_path(article.id) %>"><%= article.title %></a></h3>
                             <div class="text"><%= truncate(article.content, length: 400) %></div>
                             <a href="<%= post_path(article.id) %>" class="read-more">Lire la suite</a>

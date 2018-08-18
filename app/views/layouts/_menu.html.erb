@@ -20,6 +20,16 @@
                                 <a href="#"><span class="fa fa-twitter"></span></a>
                                 <a href="#"><span class="fa fa-linkedin"></span></a>
                                 <a href="#"><span class="fa fa-vimeo"></span></a>
+                                <% if user_signed_in? %>
+                                    <% if current_user.admin %>
+                                        <a href="<%= admin_formations_path %>"><%= fa_icon "user" %> Admin</a>
+                                    <% else %>
+                                        <a href="<%= edit_user_registration_path %>"><%= fa_icon "user" %> Profil</a>
+                                    <% end %>
+                                    <%= link_to (fa_icon "power-off"), destroy_user_session_path, method: :delete %>
+                                <% else %>
+                                    <a href="<%= new_user_session_path %>"><%= fa_icon "user" %> Login</a>
+                                <% end %>
                             </div>
                         </li>
                     </ul>
@@ -28,6 +38,10 @@
             </div>
         </div>
     </div>
+
+
+
+                               
 
     <!--Header-Upper-->
     <div class="header-upper">
@@ -93,14 +107,14 @@
                             <li class="dropdown"><a href="#">Nous connaître</a>
                                 <ul>
                                     <li><a href="<%= apropos_path %>">À propos de nous</a></li>
-                                    <li><a href="<%= apropos_path %>">Rencontrez notre équipe</a></li>
+                                    <li><a href="<%= apropos_path %>">Notre équipe</a></li>
                                     <li><a href="<%= apropos_path %>">Nos mission &amp; vision</a></li>
                                     <li><a href="<%= apropos_path %>">Nos valeurs</a></li>
                                 </ul>
                             </li>
                             <li><a href="<%= articles_path %>">Articles</a></li>
                             <li><a href="<%= formations_path %>">Formation</a></li>
-                            <li class="dropdown"><a href="#">Nos expertises et métiers</a>
+                            <li class="dropdown"><a href="#">Expertises et métiers</a>
                                 <ul>
                                     <li><a href="#">Nos expertises et métiers</a></li>
                                     <li><a href="#">Consulting</a></li>
@@ -109,17 +123,8 @@
                                     <li><a href="#">Tax &amp; Legal</a></li>
                                 </ul>
                             </li>
+                            <li><a href="<%= contact_path %>">Optima</a></li>
                             <li><a href="<%= contact_path %>">Nous contacter</a></li>
-                            <% if user_signed_in? %>
-                                <% if current_user.admin %>
-                                <li><a href="<%= admin_formations_path %>"><%= fa_icon "user" %> Admin</a></li>
-                                <% else %>
-                                    <li><a href="<%= edit_user_registration_path %>"><%= fa_icon "user" %> Profil</a></li>
-                                <% end %>
-                                <li><%= link_to (fa_icon "power-off"), destroy_user_session_path, method: :delete %></li>
-                            <% else %>
-                                <li><a href="<%= new_user_session_path %>"><%= fa_icon "user" %> Login</a></li>
-                            <% end %>
                         </ul>
                     </div>
                 </nav>
@@ -164,7 +169,7 @@
                             </li>
                             <li><a href="<%= articles_path %>">Articles</a></li>
                             <li><a href="<%= formations_path %>">Formation</a></li>
-                            <li class="dropdown"><a href="#">Nos expertises et métiers</a>
+                            <li class="dropdown"><a href="#">Expertises et métiers</a>
                                 <ul>
                                     <li><a href="#">Nos expertises et métiers</a></li>
                                     <li><a href="#">Consulting</a></li>
@@ -173,17 +178,8 @@
                                     <li><a href="#">Tax &amp; Legal</a></li>
                                 </ul>
                             </li>
+                            <li><a href="<%= contact_path %>">Optima</a></li>
                             <li><a href="<%= contact_path %>">Nous contacter</a></li>
-                            <% if user_signed_in? %>
-                                <% if current_user.admin %>
-                                <li><a href="<%= admin_formations_path %>"><%= fa_icon "user" %> Admin</a></li>
-                                <% else %>
-                                    <li><a href="<%= edit_user_registration_path %>"><%= fa_icon "user" %> Profil</a></li>
-                                <% end %>
-                                <li><%= link_to (fa_icon "power-off"), destroy_user_session_path, method: :delete %></li>
-                            <% else %>
-                                <li><a href="<%= new_user_session_path %>"><%= fa_icon "user" %> Login</a></li>
-                            <% end %>
                         </ul>
                     </div>
                 </nav><!-- Main Menu End-->

@@ -15,7 +15,7 @@
                             <a href=""><%= image_tag("logo.png", alt: "logo") %></a>
                         </div>
                         <div class="text">Over 24 years experience and knowledge international standards, technologicaly changes and industrial systems, we are dedicated to provides seds the best and economical solutions to our valued customers.</div>
-                        <a href="#" class="theme-btn btn-style-one">Read More</a>
+                        <a href="<%= apropos_path %>" class="theme-btn btn-style-one">Plus sur nous</a>
                     </div>
                 </div>
                 
@@ -23,90 +23,47 @@
                 <div class="footer-column col-md-4 col-sm-6 col-xs-12">
                     <!--About Widget-->
                     <div class="footer-widget links-widget">
-                        <h2>Usefull Links</h2>
+                        <h2>Dernieres Formations</h2>
                         <div class="row clearfix">
-                            <ul class="link-list col-md-6 col-sm-6 col-xs-12">
-                                <li><a href="#">Business Growth</a></li>
-                                <li><a href="#">Sustainability</a></li>
-                                <li><a href="#">Performance</a></li>
-                                <li><a href="#">Customer Insights</a></li>
-                                <li><a href="#">Organization</a></li>
-                                <li><a href="#">Advanced Analytics</a></li>
-                            </ul>
-                            <ul class="link-list col-md-6 col-sm-6 col-xs-12">
-                                <li><a href="#">About Triumph</a></li>
-                                <li><a href="#">Customer FAQ’s</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Free Consultation</a></li>
-                                <li><a href="#">Meet Our Team</a></li>
+                            <ul class="link-list col-md-12 col-sm-12 col-xs-12">
+                                <% @formationsfooter.each do |formation| %>
+                                    <li>
+                                        <a href="<%= formation_path(formation.id) %>">
+                                            <%= truncate(formation.title, length: 40) %>
+                                        </a>
+                                    </li>
+                                <% end %>
                             </ul>
                         </div>
                     </div>
                 </div>  
+
+                
             
                 <!--Footer Column-->
                 <div class="footer-column col-md-4 col-sm-6 col-xs-12">
                     <!--About Widget-->
                     <div class="footer-widget news-widget">
-                        <h2>Latest News</h2>
-                        
-                        <div class="news-widget-block">
-                            <div class="inner">
-                                <div class="icon flaticon-image"></div>
-                                <div class="post-date">February 14, 2017</div>
-                                <div class="text"><a href="#">Seminar for improve  business profit & loss</a></div>
+                        <h2>Derniers Articles</h2>
+
+                        <% @articlesfooter.each do |post| %>
+
+                            <div class="news-widget-block">
+                                <div class="inner">
+                                    <div class="imagepostfooter"><%= image_tag post.image.url(:thumb) %></div>
+                                    <div class="post-date"><%= time_ago_in_words(post.created_at) %></div>
+                                    <div class="text textfooter"><a href="<%= post_path(post.id) %>"> <%= truncate(post.title, length: 40) %></a></div>
+                                </div>
                             </div>
-                        </div>
-                        
-                        <div class="news-widget-block">
-                            <div class="inner">
-                                <div class="icon flaticon-image"></div>
-                                <div class="post-date">January 21, 2017</div>
-                                <div class="text"><a href="#">Experts Openion for save money for your future.</a></div>
-                            </div>
-                        </div>
-                        
+
+                        <% end %>
                     </div>
                 </div>
             
             </div>
         </div>
         
-        <!--Footer Info Section-->
-        <div class="footer-info-section">
-            <div class="row clearfix">
-                
-                <!--Info Block-->
-                <div class="info-block col-md-4 col-sm-6 col-xs-12">
-                    <div class="inner">
-                        <div class="icon flaticon-maps-and-flags"></div>
-                        <h4>Address</h4>
-                        <div class="text">185, Triumph Street, Los Angeles, USA.</div>
-                    </div>
-                </div>
-                
-                <!--Info Block-->
-                <div class="info-block col-md-4 col-sm-6 col-xs-12">
-                    <div class="inner">
-                        <div class="icon flaticon-technology-2"></div>
-                        <h4>Call Us On</h4>
-                        <div class="text">Front Desk: +123-456-7890 & 23</div>
-                    </div>
-                </div>
-                
-                <!--Info Block-->
-                <div class="info-block col-md-4 col-sm-6 col-xs-12">
-                    <div class="inner">
-                        <div class="icon flaticon-web"></div>
-                        <h4>Email at</h4>
-                        <div class="text">Supportteam@Triumph.com</div>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-    </div>
+       
     
     <!--Footer Bottom-->
     <div class="footer-bottom">
@@ -114,14 +71,6 @@
             <div class="row clearfix">
                 <div class="column col-md-6 col-sm-12 col-xs-12">
                     <div class="copyright">Copyrights &copy; 2017 All Rights Reserved. Powered by <a href="#">Triumph.</a></div>
-                </div>
-                <div class="nav-column col-md-6 col-sm-12 col-xs-12">
-                    <ul class="footer-nav">
-                        <li><a href="#">Legal</a></li>
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Condition</a></li>
-                    </ul>
                 </div>
             </div>
         </div>

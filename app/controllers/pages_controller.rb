@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   def index
-    @formations = Formation.all.order("created_at DESC")
-    @articles = Post.all.order("created_at DESC")
+    @formations = Formation.all.order("created_at DESC").limit(6)
+    @articles = Post.all.order("created_at DESC").limit(3)
   end
 
   def articles
