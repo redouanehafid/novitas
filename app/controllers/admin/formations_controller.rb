@@ -1,6 +1,6 @@
 class Admin::FormationsController < ApplicationController
 	before_action :authenticate_user!
-  before_action :is_admin?
+  	before_action :is_admin?
 	before_action :set_formation, only: [:show, :edit, :update, :destroy]
 	layout "applicationadmin"
 
@@ -58,6 +58,6 @@ class Admin::FormationsController < ApplicationController
 	end
 
 	def formation_params
-		params.require(:formation).permit(:code, :title, :online, :volume, :objectifs, :prerequis, :programme, :intervenants, :public_concerne, :les_plus, :certifications, :cgf, :lieu, :duree, :tarif, :category_id, :tag_list)
+		params.require(:formation).permit(:code, :title, :online, :volume, :objectifs, :prerequis, :programme, :intervenants, :public_concerne, :les_plus, :certifications, :cgf, :lieu, :duree, :tarif, :category_id, :tag_list, :image)
 	end
 end

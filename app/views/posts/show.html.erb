@@ -33,7 +33,7 @@
                     <div class="blog-single">
                     	<div class="inner-box">
                         	<div class="image">
-								<%= image_tag("page-background.jpg") %>
+								<%= image_tag @post.image.url(:medium) %>
                         	</div>
                             <div class="lower-content">
                             	<ul class="post-meta">
@@ -88,7 +88,7 @@
                                  <% if !comment.content.blank? %>
                                     <div class="comment-box">
                                         <div class="comment">
-                                            <div class="author-thumb"><%= image_tag("images.jpg") %></div>
+                                            <div class="author-thumb"><%= image_tag comment.user.image.url(:thumb) %></div>
                                             <div class="comment-inner">
                                                 <div class="comment-info clearfix"><%= comment.user.email %> – Sep 17, 2016:
                                                 <% if user_signed_in? && comment.user_id == current_user.id %>

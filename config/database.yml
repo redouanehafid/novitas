@@ -15,10 +15,12 @@ default: &default
 development:
   <<: *default
   database: novitas
+  password: rootpath
 
 test:
   <<: *default
   database: novitas
+  password: rootpath
 
 production:
   <<: *default

@@ -10,26 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_30_224840) do
+ActiveRecord::Schema.define(version: 2018_08_18_165350) do
 
-  create_table "categories", force: :cascade do |t|
+  create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.integer "formations_count", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "comments", force: :cascade do |t|
+  create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "content"
-    t.integer "post_id"
-    t.integer "user_id"
+    t.bigint "post_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_comments_on_post_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
-  create_table "formations", force: :cascade do |t|
+  create_table "formations", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "code"
     t.string "title"
     t.string "volume"
@@ -44,17 +44,21 @@ ActiveRecord::Schema.define(version: 2018_07_30_224840) do
     t.string "lieu"
     t.integer "duree"
     t.float "tarif"
-    t.integer "category_id"
+    t.bigint "category_id"
     t.boolean "online"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["category_id"], name: "index_formations_on_category_id"
   end
 
-  create_table "orders", force: :cascade do |t|
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date_order"
-    t.integer "formation_id"
-    t.integer "user_id"
+    t.bigint "formation_id"
+    t.bigint "user_id"
     t.boolean "valide"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -62,16 +66,20 @@ ActiveRecord::Schema.define(version: 2018_07_30_224840) do
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
-  create_table "posts", force: :cascade do |t|
+  create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.integer "comments_count", default: 0
     t.boolean "online"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
-  create_table "taggings", force: :cascade do |t|
+  create_table "taggings", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "tag_id"
     t.string "taggable_type"
     t.integer "taggable_id"
@@ -90,13 +98,13 @@ ActiveRecord::Schema.define(version: 2018_07_30_224840) do
     t.index ["tagger_id"], name: "index_taggings_on_tagger_id"
   end
 
-  create_table "tags", force: :cascade do |t|
-    t.string "name"
+  create_table "tags", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", collation: "utf8_bin"
     t.integer "taggings_count", default: 0
     t.index ["name"], name: "index_tags_on_name", unique: true
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.boolean "admin", default: false
@@ -114,8 +122,18 @@ ActiveRecord::Schema.define(version: 2018_07_30_224840) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
+    t.string "nom"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "formations", "categories"
+  add_foreign_key "orders", "formations"
+  add_foreign_key "orders", "users"
 end

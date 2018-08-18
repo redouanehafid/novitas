@@ -58,6 +58,6 @@ class Admin::PostsController < ApplicationController
 	end
 
 	def post_params
-		params.require(:post).permit(:title, :content, :online)
+		params.require(:post).permit(:title, :content, :online, :image)
 	end
 end

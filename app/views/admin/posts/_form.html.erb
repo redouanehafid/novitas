@@ -2,5 +2,6 @@
 <%= f.input :online %>
 <%= f.input :title %>
 <%= f.input :content, input_html: { rows: 10 } %>
+<%= f.input :image, as: :file %>
 <%= f.button :submit, @post.new_record? ? "Ajouter" : "Modifier", class: "btn btn-primary" %>
 <% end %>

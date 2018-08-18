@@ -16,5 +16,6 @@
 <%= f.input :tarif %>
 <%= f.association :category, include_blank: false %>
 <%= f.input :tag_list %>
+<%= f.input :image, as: :file %>
 <%= f.button :submit, @formation.new_record? ? "Ajouter" : "Modifier", class: "btn btn-primary" %>
 <% end %>
