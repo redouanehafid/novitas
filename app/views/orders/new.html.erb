@@ -1,7 +1,7 @@
  <!--Page Title-->
     <section class="page-title" style="background-image:url(./assets/build/images/background/3.jpg);">
         <div class="auto-container">
-            <h1>Details de la formation "code : <%= @formation.code %>"</h1>
+            <h1>Details de la formation</h1>
         </div>
         <!--Page Info-->
         <div class="page-info">
@@ -35,17 +35,12 @@
                         <div class="basic-details">
                             <div class="row clearfix">
                                 <div class="row">
-                                <%= image_tag("blog01.jpg", alt: "") %>
+                                <%= image_tag @formation.image.url(:medium) %>
                                     <div class="details-header" style="
-                                         position: relative;margin-bottom: 20px;border: 2px solid #B6BC3F !important;padding: 12px 23px;">
+                                         position: relative;margin-bottom: 40px;margin-top: 35px;">
                                          
-                                        <h4 style="color: #137879">
+                                        <h4 style="color: #137879;font-size: 36px !important;">
                                             <%= @formation.title %> </h4>
-                                            <p style="position: relative;padding: 5px 5px; margin-top: 20px;">
-                                            <i class="fa fa-map-marker" aria-hidden="true"></i> Lieu : <%= @formation.lieu %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <i class="fa fa-clock-o" aria-hidden="true"></i> Durèe : <%= @formation.duree %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <i class="fa fa-credit-card" aria-hidden="true"></i> Tarif : <%= @formation.tarif %> Dhs
-                                            </p>
                                     </div>
                                 </div>
                             </div>
@@ -57,6 +52,7 @@
                 <!--Sidebar Side-->
                 <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 	<aside class="sidebar default-sidebar with-border">
+                    <!--Details Formation-->
 					
                     	<!-- Search -->
                          <div class="sidebar-widget search-box">
@@ -71,6 +67,154 @@
                                 </div>
                             <% end %>
 						</div>
+
+
+
+
+
+                             <table class="table table-bordered custom-table">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 40%">
+                                            <i class="fa fa-key main-color-one"></i>
+                                            <b>Code</b>
+                                        </td>
+                                        <td>
+                                         <%= @formation.code %> </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-bordered custom-table">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 40%">
+                                            <i class="fa fa-map-marker main-color-one"></i>
+                                            <b>Lieu</b>
+                                        </td>
+                                        <td>
+                                         <%= @formation.lieu %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-bordered custom-table">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 40%">
+                                            <i class="fa fa-clock-o main-color-one"></i>
+                                            <b>durèe</b>
+                                        </td>
+                                        <td>
+                                         <%= @formation.duree %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-bordered custom-table">
+                                <tbody>
+                                    <tr>
+                                        <td style="width:  40%">
+                                            <i class="fa fa-cube main-color-one"></i>
+                                            <b>Volume</b>
+                                        </td>
+                                        <td>
+                                         <%= @formation.volume %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table class="table table-bordered custom-table">
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 40%">
+                                            <i class="fa fa-credit-card-alt main-color-one"></i>
+                                            <b>Tarif</b>
+                                        </td>
+                                        <td>
+                                         <%= @formation.tarif %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                        <table class="table table-bordered custom-table">
+                            <tbody>
+                                <tr>
+                                    <td colspan="2">
+                                        <span class="text-center">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                            <i class="fa fa-file main-color-one"></i> <b>Demander un devis</b>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="main-bg-color-two">
+                                    <td class="text-center" style=";color:white; font-weight: bold">
+                                        <a href="/formations/demande-de-devis/20-PEPARATION-A-LA-CERTIFICATION-SAP-FINANCE.html?type=inter" class="static-link">
+                                            Inter
+                                        </a>
+                                    </td>
+                                    <td class="text-center" style=";color:white; font-weight: bold">
+                                        <a href="/formations/demande-de-devis/20-PEPARATION-A-LA-CERTIFICATION-SAP-FINANCE.html?type=intra" class="static-link">
+                                            Intra
+                                        </a>
+                                    </td>
+                                </tr> 
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered custom-table">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-print main-color-one"></i> 
+                                        <a href="/formations/imprimer/20" target="_blank" style="color:#777777">
+                                            <b>Imprimer</b>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <i class="fa fa-envelope main-color-one"></i> 
+                                                <a href="mailto:?subject=Formation: PÉPARATION À LA CERTIFICATION SAP FINANCE&amp;body=Bonjour, 
+                                                Jette un coup d'œil  sur cette formation https://novitas.ayaou.me/formations/imprimer/20
+                                                " target="_blank" style="color:#777777">
+                                            <b>Envoyer à un contact</b>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="" style="">
+                                        <i class="fa fa-share-alt main-color-one"></i> <b>Partager</b>
+                                    </td>
+                                </tr> 
+                                <tr>
+                                    <td> 
+                                    <ul class="social-icon-three">
+                                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                        <li><a href="#"><span class="fa fa-viadeo"></span></a>
+                                    </li>
+                                    </ul>  
+                                </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-bordered custom-table">
+                            <tbody> 
+                                <tr class="">
+                                    <td class="text-center" style="">
+                                        <a href="/uploads/formations/20/formulaire_inscription.pdf" style="color:#777777" title="Télécharger le bulletin d'inscription à remplir et nous envoyer">
+                                            <b>Télécharger le bulletin d'inscription</b>
+                                        </a>
+                                    </td> 
+                                </tr> 
+                            </tbody>
+                        </table>
+                        <!--Details Formation-->
+
+
+
+
                     
                     	<!--Blog Category Widget-->
                         <div class="sidebar-widget sidebar-blog-category">
