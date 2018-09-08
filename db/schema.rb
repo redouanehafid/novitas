@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_08_195009) do
+ActiveRecord::Schema.define(version: 2018_09_08_222643) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(version: 2018_09_08_195009) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.integer "orders_count", default: 0
     t.index ["category_id"], name: "index_formations_on_category_id"
   end
 

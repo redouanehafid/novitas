@@ -114,25 +114,13 @@
                     	<!-- Popular Posts -->
                         <div class="sidebar-widget popular-posts">
                             <div class="sidebar-title"><h2>Formations populaires</h2></div>
-
+                            <% @topformations.each do |topformation| %>
                             <article class="post">
-                            	<figure class="post-thumb"><%= image_tag("post03.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
-                                <div class="text"><a href="blog-single.html">6 ways to keep in control your debtors</a></div>
-                                <div class="post-info">April 18, 2017</div>
+                            	<figure class="post-thumb"><%= image_tag(topformation.image.url(:thumb), alt: "") %><a class="overlay" href="<%= formation_path(topformation.id) %>"></a></figure>
+                                <div class="text"><a href="<%= formation_path(topformation.id) %>"><%= truncate(topformation.title, length: 40) %></a></div>
+                                <div class="post-info"><%= topformation.created_at.strftime("%d - %m - %Y") %></div>
                             </article>
-                            
-                            <article class="post">
-                            	<figure class="post-thumb"><%= image_tag("post01.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
-                                <div class="text"><a href="blog-single.html">What a finance director could add business</a></div>
-                                <div class="post-info">February 14, 2017</div>
-                            </article>
-                            
-                            <article class="post">
-                            	<figure class="post-thumb"><%= image_tag("post03.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
-                                <div class="text"><a href="blog-single.html">Tips for sucess in 2016: Ways to grow your business</a></div>
-                                <div class="post-info">January 16, 2017</div>
-                            </article>
-                            
+                            <% end %>
 						</div>
                     	
                         <!-- Popular Tags -->

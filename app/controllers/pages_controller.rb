@@ -13,6 +13,8 @@ class PagesController < ApplicationController
   end
 
   def formations
+    @topformations = Formation.all.order("orders_count DESC").limit(3)
+
     if params[:categorie].present?
     @category_id = Category.find(params[:categorie])
     @formations = Formation.where(category_id: @category_id).order("created_at DESC").page(params[:page]).per(8)
