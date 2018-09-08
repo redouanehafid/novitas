@@ -1,1 +1,32 @@
 <h1>Les commandes</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Code</th>
+      <th scope="col">Nom Complet</th>
+      <th scope="col">Email</th>
+      <th scope="col">Tel</th>
+      <th scope="col">Statut</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+        <tr>
+            <th scope="col"><%= order.formation.code %></th>
+            <th scope="col"><%= order.firstname + " " + order.lastname %></th>
+            <th scope="col"><%= order.user.email %></th>
+            <th scope="col"><%= order.tel %></th>
+            <th scope="col"><%= order.valide ? '<span class="badge badge-success">Validé</span>'.html_safe : '<span class="badge badge-danger">Non validé</span>'.html_safe %></th>
+            <th scope="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <%= link_to "Voir", admin_order_path(order), class:"btn btn-secondary" %>
+                    <%= link_to "Modifier", edit_admin_order_path(order), class:"btn btn-secondary" %>
+                    <%= link_to "Supprimer", admin_order_path(order),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
+                </div>
+            </th>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

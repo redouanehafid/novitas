@@ -22,7 +22,8 @@
                                 <a href="#"><span class="fa fa-vimeo"></span></a>
                                 <% if user_signed_in? %>
                                     <% if current_user.admin %>
-                                        <a href="<%= admin_formations_path %>"><%= fa_icon "user" %> Admin</a>
+                                        <a href="<%= edit_user_registration_path %>"><%= fa_icon "user" %> &nbsp; Profil</a>
+                                        <a href="<%= admin_formations_path %>"><%= fa_icon "lock" %> &nbsp; Admin</a>
                                     <% else %>
                                         <a href="<%= edit_user_registration_path %>"><%= fa_icon "user" %> Profil</a>
                                     <% end %>

@@ -1,0 +1,7 @@
+<h1> Detail de la commande</h1><br>
+<h3>Titre de la formation : <%= @order.formation.title %> </h3><br>
+<h3>Code de la formation : <%= @order.formation.code %> </h3><br>
+<h3>Nom du client : <%= @order.firstname + " " + @order.lastname %> </h3><br>
+<h3>Email du client : <%= @order.user.email %> </h3><br>
+<h3>Tel du client : <%= @order.tel %> </h3><br>
+<h3>Adresse du client : <%= @order.adresse %> </h3>

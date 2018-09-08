@@ -1,6 +1,6 @@
 class Admin::FormationsController < ApplicationController
 	before_action :authenticate_user!
-  	before_action :is_admin?
+  before_action :is_admin?
 	before_action :set_formation, only: [:show, :edit, :update, :destroy]
 	layout "applicationadmin"
 

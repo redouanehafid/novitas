@@ -16,16 +16,19 @@ class OrdersController < ApplicationController
     def create
         @formation = Formation.find(params[:formation_id])
         @user = current_user
-        @order = Order.new(params[:order])
+        @order = Order.new(order_params)
         @order.formation_id = @formation.id
         @order.user_id = @user.id
         if @order.save
-          flash[:success] = "Object successfully created"
-          redirect_to formations_path
+          flash[:success] = "Votre commande a été ajoutée avec succé, nous allons vous contacter dans les plus brefs delais"
+          redirect_to root_path
         else
-          flash[:error] = "Something went wrong"
           render 'new'
         end
     end
+
+    def order_params
+		  params.require(:order).permit(:firstname, :lastname, :tel, :adresse)
+	  end
 
 end
