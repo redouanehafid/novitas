@@ -1,287 +1,278 @@
- <!--Page Title-->
-    <section class="page-title" style="background-image:url(./assets/build/images/background/3.jpg);">
+  <section class="page-title imgBack">
         <div class="auto-container">
-            <h1>Details de la formation</h1>
+            <h1>DETAILS DE LA FORMATION </h1>
         </div>
         <!--Page Info-->
         <div class="page-info">
             <div class="auto-container clearfix">
                 <div class="pull-left">
-                    <ul class="bread-crumb clearfix">
-                        <li><a href="index.php">Home</a></li>
-                        <li>Nos Formations</li>
-                    </ul>
-                </div>
-                <div class="pull-right">
-                    <div class="share-icon"><a href="#"><span class="icon fa fa-share-alt"></span> Share</a></div>
                 </div>
             </div>
         </div>
         <!--End Page Info-->
     </section>
     <!--End Page Title-->
-    
-    <!--Sidebar Page Container-->
-    <div class="sidebar-page-container">
-    	<div class="auto-container">
-        	<div class="row clearfix">
-            	
-                <!--Content Side-->
-                <div class="content-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
-					<div class="shop-single">
-                    <div class="product-details">
 
-                        <!--Basic Details-->
-                        <div class="basic-details">
-                            <div class="row clearfix">
-                                <div class="row">
-                                <%= image_tag @formation.image.url(:medium) %>
-                                    <div class="details-header" style="
-                                         position: relative;margin-bottom: 40px;margin-top: 35px;">
-                                         
-                                        <h4 style="color: #137879;font-size: 36px !important;">
-                                            <%= @formation.title %> </h4>
-                                    </div>
-                                </div>
+
+ <!-- Hero-area -->
+<div class="hero-area section">
+
+	<!-- Backgound Image -->
+	<div class="bg-image bg-parallax overlay monentete"></div>
+	<!-- /Backgound Image -->
+
+	
+
+</div>
+<!-- /Hero-area -->
+<br>
+    
+<!--Sidebar Page Container-->
+<div class="sidebar-page-container">
+<div class="auto-container">
+    <div class="row clearfix">
+        
+        <!--Content Side-->
+        <div class="content-side col-lg-8 col-md-8 col-sm-12 col-xs-12">
+            <div class="shop-single">
+            <div class="product-details">
+
+                <!--Basic Details-->
+                <div class="basic-details">
+                    <div class="row clearfix">
+                        <div class="row">
+                        <%= image_tag @formation.image.url(:medium) %>
+                            <div class="details-header" style="
+                                    position: relative;margin-bottom: 40px;margin-top: 35px;">
+                                    
+                                <h4 style="color: #137879;font-size: 36px !important;">
+                                    <%= @formation.title %> </h4>
                             </div>
                         </div>
-                        <!--Basic Details-->
                     </div>
                 </div>
-                </div>
-                <!--Sidebar Side-->
-                <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                	<aside class="sidebar default-sidebar with-border">
-                    <!--Details Formation-->
-					
-                    	<!-- Search -->
-                         <div class="sidebar-widget search-box">
-                        	<%= form_tag formations_path, :method => 'get' do %>
-                                <div class="form-group">
-                                    <% if params[:search].present? %>
-                                        <%= text_field_tag :search,nil, class:"input", value:"#{params[:search]}" %>
-                                    <% else %>
-                                        <%= text_field_tag :search,nil, class:"input", placeholder:"Trouvez une formation ... " %>
-                                    <% end %>
-                                    <%= button_tag fa_icon "search" %>
-                                </div>
-                            <% end %>
-						</div>
-
-
-
-
-
-                             <table class="table table-bordered custom-table">
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 40%">
-                                            <i class="fa fa-key main-color-one"></i>
-                                            <b>Code</b>
-                                        </td>
-                                        <td>
-                                         <%= @formation.code %> </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-bordered custom-table">
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 40%">
-                                            <i class="fa fa-map-marker main-color-one"></i>
-                                            <b>Lieu</b>
-                                        </td>
-                                        <td>
-                                         <%= @formation.lieu %>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-bordered custom-table">
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 40%">
-                                            <i class="fa fa-clock-o main-color-one"></i>
-                                            <b>durèe</b>
-                                        </td>
-                                        <td>
-                                         <%= @formation.duree %>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-bordered custom-table">
-                                <tbody>
-                                    <tr>
-                                        <td style="width:  40%">
-                                            <i class="fa fa-cube main-color-one"></i>
-                                            <b>Volume</b>
-                                        </td>
-                                        <td>
-                                         <%= @formation.volume %>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <table class="table table-bordered custom-table">
-                                <tbody>
-                                    <tr>
-                                        <td style="width: 40%">
-                                            <i class="fa fa-credit-card-alt main-color-one"></i>
-                                            <b>Tarif</b>
-                                        </td>
-                                        <td>
-                                         <%= @formation.tarif %>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            
-                        <table class="table table-bordered custom-table">
-                            <tbody>
-                                <tr>
-                                    <td colspan="2">
-                                        <span class="text-center">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;
-                                            <i class="fa fa-file main-color-one"></i> <b>Demander un devis</b>
-                                        </span>
-                                    </td>
-                                </tr>
-                                <tr class="main-bg-color-two">
-                                    <td class="text-center" style=";color:white; font-weight: bold">
-                                        <a href="/formations/demande-de-devis/20-PEPARATION-A-LA-CERTIFICATION-SAP-FINANCE.html?type=inter" class="static-link">
-                                            Inter
-                                        </a>
-                                    </td>
-                                    <td class="text-center" style=";color:white; font-weight: bold">
-                                        <a href="/formations/demande-de-devis/20-PEPARATION-A-LA-CERTIFICATION-SAP-FINANCE.html?type=intra" class="static-link">
-                                            Intra
-                                        </a>
-                                    </td>
-                                </tr> 
-                            </tbody>
-                        </table>
-                        <table class="table table-bordered custom-table">
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-print main-color-one"></i> 
-                                        <a href="/formations/imprimer/20" target="_blank" style="color:#777777">
-                                            <b>Imprimer</b>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <i class="fa fa-envelope main-color-one"></i> 
-                                                <a href="mailto:?subject=Formation: PÉPARATION À LA CERTIFICATION SAP FINANCE&amp;body=Bonjour, 
-                                                Jette un coup d'œil  sur cette formation https://novitas.ayaou.me/formations/imprimer/20
-                                                " target="_blank" style="color:#777777">
-                                            <b>Envoyer à un contact</b>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="" style="">
-                                        <i class="fa fa-share-alt main-color-one"></i> <b>Partager</b>
-                                    </td>
-                                </tr> 
-                                <tr>
-                                    <td> 
-                                    <ul class="social-icon-three">
-                                    <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
-                                        <li><a href="#"><span class="fa fa-viadeo"></span></a>
-                                    </li>
-                                    </ul>  
-                                </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <table class="table table-bordered custom-table">
-                            <tbody> 
-                                <tr class="">
-                                    <td class="text-center" style="">
-                                        <a href="/uploads/formations/20/formulaire_inscription.pdf" style="color:#777777" title="Télécharger le bulletin d'inscription à remplir et nous envoyer">
-                                            <b>Télécharger le bulletin d'inscription</b>
-                                        </a>
-                                    </td> 
-                                </tr> 
-                            </tbody>
-                        </table>
-                        <!--Details Formation-->
-
-
-
-
-                    
-                    	<!--Blog Category Widget-->
-                        <div class="sidebar-widget sidebar-blog-category">
-                            <div class="sidebar-title">
-                                <h2>Categories</h2>
-                            </div>
-                            <ul class="blog-cat">
-                                <li><a href="<%= formations_path %>">Toutes les formations <span> (<%= @nbrformation %>) </span></a></li>
-                                <% @categories.each do |category| %>
-                                    <li><a href="<%= formations_path(categorie: category.id) %>"><%= category.title %> 
-                                        <span>(<%= category.formations_count.present? ? category.formations_count : 0 %>)</span></a>
-                                    </li>
-                                <% end %>
-                            </ul>
-                        </div>
-                    
-                    	<!-- Popular Posts -->
-                        <div class="sidebar-widget popular-posts">
-                            <div class="sidebar-title"><h2>Formations populaires</h2></div>
-
-                            <article class="post">
-                            	<figure class="post-thumb"><%= image_tag("post03.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
-                                <div class="text"><a href="blog-single.html">6 ways to keep in control your debtors</a></div>
-                                <div class="post-info">April 18, 2017</div>
-                            </article>
-                            
-                            <article class="post">
-                            	<figure class="post-thumb"><%= image_tag("post01.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
-                                <div class="text"><a href="blog-single.html">What a finance director could add business</a></div>
-                                <div class="post-info">February 14, 2017</div>
-                            </article>
-                            
-                            <article class="post">
-                            	<figure class="post-thumb"><%= image_tag("post03.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
-                                <div class="text"><a href="blog-single.html">Tips for sucess in 2016: Ways to grow your business</a></div>
-                                <div class="post-info">January 16, 2017</div>
-                            </article>
-                            
-						</div>
-                    	
-                        <!-- Popular Tags -->
-                        <div class="sidebar-widget popular-tags">
-                            <div class="sidebar-title"><h2>Mots clés</h2></div>
-                                <div id="tag_cloud">
-                                    <% tag_cloud Formation.tag_counts, %w[s m l] do |tag, css_class| %>
-                                        <%= link_to tag.name, tag_path(tag.name), class: css_class %>
-                                    <% end %>
-                                </div>
-                        </div>
-                        
-                    </aside>
-                </div>
-                <!--End Sidebar Side-->
-         </div>
+                <!--Basic Details-->
+            </div>
         </div>
+        </div>
+        <!--Sidebar Side-->
+        <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            <aside class="sidebar default-sidebar with-border">
+            <!--Details Formation-->
+            
+                <!-- Search -->
+                    <div class="sidebar-widget search-box">
+                    <%= form_tag formations_path, :method => 'get' do %>
+                        <div class="form-group">
+                            <% if params[:search].present? %>
+                                <%= text_field_tag :search,nil, class:"input", value:"#{params[:search]}" %>
+                            <% else %>
+                                <%= text_field_tag :search,nil, class:"input", placeholder:"Trouvez une formation ... " %>
+                            <% end %>
+                            <%= button_tag fa_icon "search" %>
+                        </div>
+                    <% end %>
+                </div>
 
 
 
 
 
+                        <table class="table table-bordered custom-table">
+                        <tbody>
+                            <tr>
+                                <td style="width: 40%">
+                                    <i class="fa fa-key main-color-one"></i>
+                                    <b>Code</b>
+                                </td>
+                                <td>
+                                    <%= @formation.code %> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered custom-table">
+                        <tbody>
+                            <tr>
+                                <td style="width: 40%">
+                                    <i class="fa fa-map-marker main-color-one"></i>
+                                    <b>Lieu</b>
+                                </td>
+                                <td>
+                                    <%= @formation.lieu %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered custom-table">
+                        <tbody>
+                            <tr>
+                                <td style="width: 40%">
+                                    <i class="fa fa-clock-o main-color-one"></i>
+                                    <b>durèe</b>
+                                </td>
+                                <td>
+                                    <%= @formation.duree %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered custom-table">
+                        <tbody>
+                            <tr>
+                                <td style="width:  40%">
+                                    <i class="fa fa-cube main-color-one"></i>
+                                    <b>Volume</b>
+                                </td>
+                                <td>
+                                    <%= @formation.volume %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered custom-table">
+                        <tbody>
+                            <tr>
+                                <td style="width: 40%">
+                                    <i class="fa fa-credit-card-alt main-color-one"></i>
+                                    <b>Tarif</b>
+                                </td>
+                                <td>
+                                    <%= @formation.tarif %>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                <table class="table table-bordered custom-table">
+                    <tbody>
+                        <tr>
+                            <td colspan="2">
+                                <span class="text-center">
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    <i class="fa fa-file main-color-one"></i> <b>Demander un devis</b>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr class="main-bg-color-two">
+                            <td class="text-center" style=";color:white; font-weight: bold">
+                                <a href="/formations/demande-de-devis/20-PEPARATION-A-LA-CERTIFICATION-SAP-FINANCE.html?type=inter" class="static-link">
+                                    Inter
+                                </a>
+                            </td>
+                            <td class="text-center" style=";color:white; font-weight: bold">
+                                <a href="/formations/demande-de-devis/20-PEPARATION-A-LA-CERTIFICATION-SAP-FINANCE.html?type=intra" class="static-link">
+                                    Intra
+                                </a>
+                            </td>
+                        </tr> 
+                    </tbody>
+                </table>
+                <table class="table table-bordered custom-table">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <i class="fa fa-print main-color-one"></i> 
+                                <a href="/formations/imprimer/20" target="_blank" style="color:#777777">
+                                    <b>Imprimer</b>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <i class="fa fa-envelope main-color-one"></i> 
+                                        <a href="mailto:?subject=Formation: PÉPARATION À LA CERTIFICATION SAP FINANCE&amp;body=Bonjour, 
+                                        Jette un coup d'œil  sur cette formation https://novitas.ayaou.me/formations/imprimer/20
+                                        " target="_blank" style="color:#777777">
+                                    <b>Envoyer à un contact</b>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="" style="">
+                                <i class="fa fa-share-alt main-color-one"></i> <b>Partager</b>
+                            </td>
+                        </tr> 
+                        <tr>
+                            <td> 
+                            <ul class="social-icon-three">
+                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
+                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
+                                <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                                <li><a href="#"><span class="fa fa-viadeo"></span></a>
+                            </li>
+                            </ul>  
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="table table-bordered custom-table">
+                    <tbody> 
+                        <tr class="">
+                            <td class="text-center" style="">
+                                <a href="/uploads/formations/20/formulaire_inscription.pdf" style="color:#777777" title="Télécharger le bulletin d'inscription à remplir et nous envoyer">
+                                    <b>Télécharger le bulletin d'inscription</b>
+                                </a>
+                            </td> 
+                        </tr> 
+                    </tbody>
+                </table>
+                <!--Details Formation-->
 
 
 
 
+            
+                <!--Blog Category Widget-->
+                <div class="sidebar-widget sidebar-blog-category">
+                    <div class="sidebar-title">
+                        <h2>Categories</h2>
+                    </div>
+                    <ul class="blog-cat">
+                        <li><a href="<%= formations_path %>">Toutes les formations <span> (<%= @nbrformation %>) </span></a></li>
+                        <% @categories.each do |category| %>
+                            <li><a href="<%= formations_path(categorie: category.id) %>"><%= category.title %> 
+                                <span>(<%= category.formations_count.present? ? category.formations_count : 0 %>)</span></a>
+                            </li>
+                        <% end %>
+                    </ul>
+                </div>
+            
+                <!-- Popular Posts -->
+                <div class="sidebar-widget popular-posts">
+                    <div class="sidebar-title"><h2>Formations populaires</h2></div>
 
-
-
-
-
-
+                    <article class="post">
+                        <figure class="post-thumb"><%= image_tag("post03.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
+                        <div class="text"><a href="blog-single.html">6 ways to keep in control your debtors</a></div>
+                        <div class="post-info">April 18, 2017</div>
+                    </article>
+                    
+                    <article class="post">
+                        <figure class="post-thumb"><%= image_tag("post01.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
+                        <div class="text"><a href="blog-single.html">What a finance director could add business</a></div>
+                        <div class="post-info">February 14, 2017</div>
+                    </article>
+                    
+                    <article class="post">
+                        <figure class="post-thumb"><%= image_tag("post03.jpg", alt: "") %><a class="overlay" href="blog-single.html"></a></figure>
+                        <div class="text"><a href="blog-single.html">Tips for sucess in 2016: Ways to grow your business</a></div>
+                        <div class="post-info">January 16, 2017</div>
+                    </article>
+                    
+                </div>
+                
+                <!-- Popular Tags -->
+                <div class="sidebar-widget popular-tags">
+                    <div class="sidebar-title"><h2>Mots clés</h2></div>
+                        <div id="tag_cloud">
+                            <% tag_cloud Formation.tag_counts, %w[s m l] do |tag, css_class| %>
+                                <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+                            <% end %>
+                        </div>
+                </div>
+                
+            </aside>
+        </div>
+        <!--End Sidebar Side-->
+    </div>
+</div>

@@ -1,52 +1,58 @@
-<!--Page Title-->
-    <section class="page-title" style="background-image:url(./assets/build/images/background/3.jpg);">
+ <section class="page-title imgBack">
         <div class="auto-container">
-            <h1>Nos Articles</h1>
+            <h1>NOS ARTICLES</h1>
         </div>
         <!--Page Info-->
         <div class="page-info">
             <div class="auto-container clearfix">
                 <div class="pull-left">
-                    <ul class="bread-crumb clearfix">
-                        <li><a href="index.php">Home</a></li>
-                        <li>Nos articles</li>
-                    </ul>
-                </div>
-                <div class="pull-right">
-                    <div class="share-icon"><a href="#"><span class="icon fa fa-share-alt"></span> Share</a></div>
                 </div>
             </div>
         </div>
         <!--End Page Info-->
     </section>
     <!--End Page Title-->
-    
-    <!--Sidebar Page Container-->
-    <div class="sidebar-page-container">
-    	<div class="auto-container">
-        	<div class="row clearfix">
-            	 <!--Content Side-->
-                <!--News Block Three-->
-				<% @articles.each do |article| %>
-					<div class="content-side col-lg-6 col-md-6 col-sm-12 col-xs-12">
-						<div class="news-block-three">
-							<div class="inner-box">
-								<div class="image">
-									<%= image_tag article.image.url(:medium) %>
-								</div>
-								<div class="lower-content">
-									<ul class="post-meta">
-										<li><span class="icon fa fa-calendar"></span>September 21, 2017</li>
-										<li><span class="icon fa fa-comments"></span><%= article.comments_count %> Comments</li>
-									</ul>
-									<h3><a href="<%= post_path(article.id) %>"><%= article.title %></a></h3>
-									<div class="text"><%= truncate(article.content, length: 150) %></div>
-									<a href="<%= post_path(article.id) %>" class="theme-btn btn-style-three">Lire la suite</a>
-								</div>
+
+
+ <!-- Hero-area -->
+<div class="hero-area section">
+
+	<!-- Backgound Image -->
+	<div class="bg-image bg-parallax overlay monentete"></div>
+	<!-- /Backgound Image -->
+
+	
+
+</div>
+<!-- /Hero-area -->
+<br>
+
+<!--Sidebar Page Container-->
+<div class="sidebar-page-container">
+	<div class="auto-container">
+		<div class="row clearfix">
+				<!--Content Side-->
+			<!--News Block Three-->
+			<% @articles.each do |article| %>
+				<div class="content-side col-lg-6 col-md-6 col-sm-12 col-xs-12">
+					<div class="news-block-three">
+						<div class="inner-box">
+							<div class="image">
+								<%= image_tag article.image.url(:medium) %>
+							</div>
+							<div class="lower-content">
+								<ul class="post-meta">
+									<li><span class="icon fa fa-calendar"></span>September 21, 2017</li>
+									<li><span class="icon fa fa-comments"></span><%= article.comments_count %> Comments</li>
+								</ul>
+								<h3><a href="<%= post_path(article.id) %>"><%= article.title %></a></h3>
+								<div class="text"><%= truncate(article.content, length: 150) %></div>
+								<a href="<%= post_path(article.id) %>" class="theme-btn btn-style-three">Lire la suite</a>
 							</div>
 						</div>
 					</div>
-				<% end %>    
-        	</div>        
-        </div>
-    </div>
+				</div>
+			<% end %>    
+		</div>        
+	</div>
+</div>
