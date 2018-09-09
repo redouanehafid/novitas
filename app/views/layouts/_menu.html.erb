@@ -104,8 +104,8 @@
                     
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class="current" ><a href="<%= root_path %>">Accueil</a></li>
-                            <li class="dropdown"><a href="#">Nous connaître</a>
+                            <li class=<%="current" if yield(:titre) == "index" %>><a href="<%= root_path %>">Accueil</a></li>
+                            <li class="dropdown <%="current" if yield(:titre) == "about" %>"><a href="#">Nous connaître</a>
                                 <ul>
                                     <li><a href="<%= apropos_path(p: "a-propos-de-nous") %>">À propos de nous</a></li>
                                     <li><a href="<%= apropos_path(p: "notre-equipe") %>">Notre équipe</a></li>
@@ -113,9 +113,9 @@
                                     <li><a href="<%= apropos_path(p: "nos-valeurs") %>">Nos valeurs</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<%= articles_path %>">Articles</a></li>
-                            <li><a href="<%= formations_path %>">Formation</a></li>
-                            <li class="dropdown"><a href="#">Expertises et métiers</a>
+                            <li class=<%="current" if yield(:titre) == "articles" %>><a href="<%= articles_path %>">Articles</a></li>
+                            <li class=<%="current" if yield(:titre) == "formations" %>><a href="<%= formations_path %>">Formation</a></li>
+                            <li class="dropdown <%="current" if yield(:titre) == "expertise" %>"><a href="#">Expertises et métiers</a>
                                 <ul>
                                     <li><a href="<%= expertise_path(p: "nos-expertises-et-metiers") %>">Nos expertises et métiers</a></li>
                                     <li><a href="<%= expertise_path(p: "consulting") %>">Consulting</a></li>
@@ -124,8 +124,8 @@
                                     <li><a href="<%= expertise_path(p: "tax-legal") %>">Tax &amp; Legal</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<%= optima_path %>">Optima</a></li>
-                            <li><a href="<%= contact_path %>">Nous contacter</a></li>
+                            <li class=<%="current" if yield(:titre) == "optima" %>><a href="<%= optima_path %>">Optima</a></li>
+                            <li class=<%="current" if yield(:titre) == "contact" %>><a href="<%= contact_path %>">Nous contacter</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -159,8 +159,8 @@
                     
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class="current" ><a href="<%= root_path %>">Accueil</a></li>
-                            <li class="dropdown"><a href="#">Nous connaître</a>
+                           <li class=<%="current" if yield(:titre) == "index" %>><a href="<%= root_path %>">Accueil</a></li>
+                            <li class="dropdown <%="current" if yield(:titre) == "about" %>"><a href="#">Nous connaître</a>
                                 <ul>
                                     <li><a href="<%= apropos_path(p: "a-propos-de-nous") %>">À propos de nous</a></li>
                                     <li><a href="<%= apropos_path(p: "notre-equipe") %>">Notre équipe</a></li>
@@ -168,9 +168,9 @@
                                     <li><a href="<%= apropos_path(p: "nos-valeurs") %>">Nos valeurs</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<%= articles_path %>">Articles</a></li>
-                            <li><a href="<%= formations_path %>">Formation</a></li>
-                            <li class="dropdown"><a href="#">Expertises et métiers</a>
+                            <li class=<%="current" if yield(:titre) == "articles" %>><a href="<%= articles_path %>">Articles</a></li>
+                            <li class=<%="current" if yield(:titre) == "formations" %>><a href="<%= formations_path %>">Formation</a></li>
+                            <li class="dropdown <%="current" if yield(:titre) == "expertise" %>"><a href="#">Expertises et métiers</a>
                                 <ul>
                                     <li><a href="<%= expertise_path(p: "nos-expertises-et-metiers") %>">Nos expertises et métiers</a></li>
                                     <li><a href="<%= expertise_path(p: "consulting") %>">Consulting</a></li>
@@ -179,8 +179,8 @@
                                     <li><a href="<%= expertise_path(p: "tax-legal") %>">Tax &amp; Legal</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<%= optima_path %>">Optima</a></li>
-                            <li><a href="<%= contact_path %>">Nous contacter</a></li>
+                            <li class=<%="current" if yield(:titre) == "optima" %>><a href="<%= optima_path %>">Optima</a></li>
+                            <li class=<%="current" if yield(:titre) == "contact" %>><a href="<%= contact_path %>">Nous contacter</a></li>
                         </ul>
                     </div>
                 </nav><!-- Main Menu End-->

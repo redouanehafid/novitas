@@ -1,3 +1,5 @@
+ <% provide(:titre , "about") %>
+
  <section class="page-title imgBack">
         <div class="auto-container">
         <% if params[:p].present? && params[:p] == "notre-equipe" %>
@@ -51,7 +53,7 @@
                         <!-- Sidebar Category -->
                         <div class="sidebar-widget sidebar-category">
                             <ul class="list">
-                                <li class="<%= "current" if params[:p] == "a-propos-de-nous" %>"><a href="<%= apropos_path(p: "a-propos-de-nous") %>">À propos de nous</a></li>
+                                <li class="<%= "current" if params[:p] == "a-propos-de-nous" || !params[:p].present? %>"><a href="<%= apropos_path(p: "a-propos-de-nous") %>">À propos de nous</a></li>
                                 <li class="<%= "current" if params[:p] == "notre-equipe" %>"><a href="<%= apropos_path(p: "notre-equipe") %>">Notre équipe</a></li>
                                 <li class="<%= "current" if params[:p] == "nos-missions-et-visions" %>"><a href="<%= apropos_path(p: "nos-missions-et-visions") %>">Nos missions &amp; visions</a></li>
                                 <li class="<%= "current" if params[:p] == "nos-valeurs" %>"><a href="<%= apropos_path(p: "nos-valeurs") %>">Nos valeurs</a></li>
