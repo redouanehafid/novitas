@@ -48,17 +48,29 @@
                                 <h4 style="color: #137879;font-size: 36px !important;">
                                     <%= @formation.title %> </h4>
                             </div>
-                            <%= simple_form_for [@formation, @order] do |f| %>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input type="text" class="form-control" value="<%= current_user.email %>" readonly>
-                                </div>
-                                <%= f.input :firstname %>
-                                <%= f.input :lastname %>
-                                <%= f.input :tel %>
-                                <%= f.input :adresse %>
-                                <%= f.button :submit, "Valider la commande" , class: "btn btn-primary" %>
-                            <% end %>
+                            <div class="checkout-form">
+                                <%= simple_form_for [@formation, @order] do |f| %>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                        <label>Email</label>
+                                        <input type="text" class="form-control" value="<%= current_user.email %>" readonly>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                    <%= f.input :firstname, label: "Prénom" %>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-12 col-xs-12">
+                                    <%= f.input :lastname, label: "Nom" %>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <%= f.input :tel, label: "Num. Tèl." %>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <%= f.input :adresse, label: "Adresse" %>
+                                    </div>
+                                    <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <%= f.button :submit, "Valider la commande" , class: "theme-btn btn-style-one place-order" %>
+                                    </div>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -66,6 +78,14 @@
             </div>
         </div>
         </div>
+
+            
+
+
+
+
+
+
         <!--Sidebar Side-->
         <div class="sidebar-side col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <aside class="sidebar default-sidebar with-border">
