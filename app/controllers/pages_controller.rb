@@ -31,6 +31,8 @@ class PagesController < ApplicationController
 
   def apropos
   end
+  def expertise
+  end
 
   def contact
   end

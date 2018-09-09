@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get 'articles' => 'pages#articles'
   get 'formations' => 'pages#formations'
   get 'apropos' => 'pages#apropos'
+  get 'expertise' => 'pages#expertise'
   get 'contact' => 'pages#contact'
   get 'optima' => 'pages#optima'
 
