@@ -48,6 +48,11 @@
                                 <h4 style="color: #137879;font-size: 36px !important;">
                                     <%= @formation.title %> </h4>
                             </div>
+
+                            <div class="sec-title">
+                                <h2>Formulaire de commande</h2>
+                                <div class="separator"></div>
+                            </div>
                             <div class="checkout-form">
                                 <%= simple_form_for [@formation, @order] do |f| %>
                                     <div class="form-group col-md-12 col-sm-12 col-xs-12">

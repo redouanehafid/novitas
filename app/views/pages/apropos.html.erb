@@ -1,6 +1,15 @@
  <section class="page-title imgBack">
         <div class="auto-container">
-            <h1>A PROPOS DE NOUS</h1>
+        <% if params[:p].present? && params[:p] == "notre-equipe" %>
+            <h1>Notre équipe</h1>
+        <% elsif params[:p].present? && params[:p] == "nos-missions-et-visions" %>
+            <h1>Nos missions &amp; visions</h1>
+        <% elsif params[:p].present? && params[:p] == "nos-valeurs" %>
+            <h1>Nos valeurs</h1>
+        <% else %>
+            <h1>À propos de nous</h1>
+        <% end %>
+            
         </div>
         <!--Page Info-->
         <div class="page-info">
@@ -27,357 +36,45 @@
 <!-- /Hero-area -->
 <br>
 
-<!--End About Section Two-->
-<section class="about-section-two">
-    <div class="auto-container">
-        <div class="row clearfix">
-            <!--Column-->
-            <div class="column col-md-6 col-sm-12 col-xs-12">
-                <!--About Column-->
-                <div class="about-company">
-                    <div class="inner-box">
-                        
-                        <div class="lower-content">
-                            <h4>À propos de NOVITAS</h4>
-                            
-                            <!--<div class="separator"></div>-->
-                            <div class="bold-text">Cabinet de conseil</div>
-                                    <p class="image col-md-12" >
-                                    <%= image_tag("page-background.jpg") %>
-                                    <br>
-                                    </p>
-                                    
-
-                            
-                            <div class="text" >
-                                    
-                                    
-
-                                <p>Créé en 2016 suite à l’alliance et la collaboration d’experts anciens collaborateurs de cabinets de référence de la place qui ont capitalisé une grande expertise dans les métiers de conseil, le cabinet Novitas Consulting est un cabinet spécialisé dans les métiers de conseil, de formation et d'audit selon un Business model innovant. </p>
-
-                                <p>Quotidiennement, nous délivrons des solutions et expertises opportunes à nos clients et porteuses de hautes valeurs ajoutées selon des approches participatives, solides et évolutives. Ces solutions s’alignent sur les standards universels en la matière et privilégient des offres globales et multi dimensionnelles qui intègrent l’engagement de notre établissement pour la qualité et le développement durable.</p>
-
-                                <p>Dans chaque projet, avec une écoute active, nous commençons par poser les bonnes questions avant d’approfondir nos analyses et traiter les causes racines des dysfonctionnements et problématiques détectés. Ensuite, nous proposons les solutions optimales qui vont stimuler durablement la création de la valeur et générer l’excellence des organisations.</p>
 
 
-                            </div>
 
-                            
-                            <h3>Notre mission</h3>
-                            <div class="bold-text">Specialitè</div>
-                            <div class="text">
-                                <p>En tant que cabinet spécialisé dans les métiers de conseil, de formation et d’audit, notre mission est d’aider et accompagner les entreprises vers l’excellence.  Cette mission est partagée par tous nos collaborateurs qui proposent des solutions et conseillent dans le respect des valeurs de notre firme. </p>
-
-
-                            </div>
-                            
+<!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+            	
+                <!--Sidebar Side-->
+                <div class="sidebar-side no-border col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                	<aside class="sidebar default-sidebar">
+						
+                        <!-- Sidebar Category -->
+                        <div class="sidebar-widget sidebar-category">
+                            <ul class="list">
+                                <li class="<%= "current" if params[:p] == "a-propos-de-nous" %>"><a href="<%= apropos_path(p: "a-propos-de-nous") %>">À propos de nous</a></li>
+                                <li class="<%= "current" if params[:p] == "notre-equipe" %>"><a href="<%= apropos_path(p: "notre-equipe") %>">Notre équipe</a></li>
+                                <li class="<%= "current" if params[:p] == "nos-missions-et-visions" %>"><a href="<%= apropos_path(p: "nos-missions-et-visions") %>">Nos missions &amp; visions</a></li>
+                                <li class="<%= "current" if params[:p] == "nos-valeurs" %>"><a href="<%= apropos_path(p: "nos-valeurs") %>">Nos valeurs</a></li>
+                            </ul>
                         </div>
-                    </div>
+                    </aside>
                 </div>
-            </div>
-            <!--Column-->
-            <div class="column col-md-6 col-sm-12 col-xs-12">
-                <!--What We Do-->
-                <div class="what-we-do">
-                    <div class="inner-box">
-                        
-                        <div class="lower-content">
-                            <!--Servives Block-->
-                            <!-- <div class="service-block-three">
-                                <div class="inner">
-                                    <div class="icon-box">
-                                        <span class="icon flaticon-edit"></span>
-                                    </div>
-                                    <h3><a href="services-single-1.php">Notre mission</a></h3>
-                                    <div class="sub-title">Spécialité </div>
-                                    <div class="text">En tant que cabinet spécialisé dans les métiers de conseil, de formation et d’audit, notre mission est d’aider et accompagner les entreprises vers l’excellence.  Cette mission est partagée par tous nos collaborateurs qui proposent des solutions et conseillent dans le respect des valeurs de notre firme.
-                                    </div>
-
-
-
-                                </div>
-                            </div>-->
-                            
-                            <!--Servives Block-->
-                            <div class="service-block-three">
-                                <div class="inner">
-                                    <div class="icon-box">
-                                        <span class="icon flaticon-idea"></span>
-                                    </div>
-                                    <h3><a href="services-single-1.php">Notre Vision</a></h3>
-                                    <div class="sub-title">Resultant pleasure</div>
-                                    <div class="text">Engagés par nos valeurs, nous travaillons ardemment pour fournir des offres innovantes et de qualité capables d’apporter des réponses optimales qui puissent activer les neurones vers l’atteinte de l’excellence au niveau des éco-systèmes dans lesquels nous intervenons. Nous œuvrons également dans le développement et l’amélioration des métiers de conseil, de formation et d’audit.</div>
-
-                                    <div class="text">Nous ambitionnons d’être un cabinet de référence dans des créneaux prometteurs. Nous voulons impacter positivement l’ensemble de nos parties prenantes et participer dans le développement de notre pays et pour un monde meilleur.  Notre vision est aussi de proposer un conseil accessible, responsable et faiseur de durabilité. 
-                                    </div>
-                                    <div class="text">Nous travaillons pour développer une approche collaborative et de partenariat attirante, fructueuse et pérenne.  Nous nous investissons pareillement pour motiver et fidéliser nos collaborateurs et bâtir un environnement de travail encourageant et inspirant. 
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <!--Servives Block-->
-                            <div class="service-block-three">
-                                <div class="inner">
-                                    <div class="icon-box">
-                                        <span class="icon flaticon-briefcase-1"></span>
-                                    </div>
-                                    <h3><a href="services-single-1.php">Nos  Valeurs</a></h3>
-                                    <div class="sub-title">Except to obtain</div>
-                                    <div class="text"><p>Dès nos premiers jours, nos processus, pratiques et comportements se ressourcent de principes directeurs et engagements volontaristes ancrés dans notre ADN que nous vivons quotidiennement et démontrons dans toutes les dynamiques de nos relations internes et avec nos partenaires. Dans ce sens, notre cartographie de valeurs ne cesse de s'améliorer afin d'enrichir continuellement l'expérience client....</p>
-
-                                        <ul>
-                                            <li>♣   Qualité et Durabilité : Développer, appliquer et améliorer des processus, pratiques et relations qui respectent les standards internationaux en matière de qualité et de développement durable.</li>
-                                            <li>♣   Respect et Intégrité : Promouvoir l'adoption de qualités éthiques, notamment le respect et l'intégrité, envers soi-même et envers les autres.</li>
-                                            <li>♣   Excellence : Nous surpasser quotidiennement pour donner le meilleur de nous-mêmes et de ce qui s'exerce chez nos concurrents.</li>
-                                            <li>♣   Confidentialité : Gérer la confidentialité du patrimoine informationnel de notre cabinet et protéger assurément les informations hautement distinctives de nos partenaires.</li>
-                                        </ul>
-
-
-
-
-                                    </div>
-
-                                </div>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--End About Section Two-->
-
-<!--Services Section-->
-<section class="services-section-two" style="background-image:url(./assets/build/images/background/pattern-1.png);">
-    <div class="auto-container">
-        
-        <!--Counter Section-->
-        <section class="counter-section style-two">
-            
-            <div class="fact-counter">
-                <div class="row clearfix">
                 
-                    <!--Column-->
-                    <div class="column counter-column col-md-3 col-sm-6 col-xs-12">
-                        <div class="inner">
-                            <div class="content">
-                                <div class="icon-box"><span class="icon flaticon-business-3"></span></div>
-                                <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="2500" data-stop="1472">0</span>
-                                </div>
-                                <h4 class="counter-title">Projects Completed</h4>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <!--Column-->
-                    <div class="column counter-column col-md-3 col-sm-6 col-xs-12">
-                        <div class="inner">
-                            <div class="content">
-                                <div class="icon-box"><span class="icon flaticon-man"></span></div>
-                                <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="2000" data-stop="285">0</span>+
-                                </div>
-                                <h4 class="counter-title">Experienced Workers</h4>
-                            </div>
-                        </div>
-                    </div>
-            
-                    <!--Column-->
-                    <div class="column counter-column col-md-3 col-sm-6 col-xs-12">
-                        <div class="inner">
-                            <div class="content">
-                                <div class="icon-box"><span class="icon flaticon-medal"></span></div>
-                                <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="3000" data-stop="625">0</span>+
-                                </div>
-                                <h4 class="counter-title">National Awards Won</h4>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!--Column-->
-                    <div class="column counter-column col-md-3 col-sm-6 col-xs-12">
-                        <div class="inner">
-                            <div class="content">
-                                <div class="icon-box"><span class="icon flaticon-coffee-cup-1"></span></div>
-                                <div class="count-outer count-box">
-                                    <span class="count-text" data-speed="4000" data-stop="3962">0</span>
-                                </div>
-                                <h4 class="counter-title">Cups of Coffee</h4>
-                            </div>
-                        </div>
-                    </div>
-            
+                <!--Content Side-->
+                <div class="content-side col-lg-9 col-md-8 col-sm-12 col-xs-12">
+					<!--Services Single One-->
+                    <% if params[:p].present? && params[:p] == "notre-equipe" %>
+                        <%= render "pages/about/equipe" %>
+                    <% elsif params[:p].present? && params[:p] == "nos-missions-et-visions" %>
+                        <%= render "pages/about/missions" %>
+                    <% elsif params[:p].present? && params[:p] == "nos-valeurs" %>
+                        <%= render "pages/about/valeurs" %>
+                    <% else %>
+                        <%= render "pages/about/about" %>
+                    <% end %>
                 </div>
-            </div>
                 
-        </section>
-        
-
-<!--Team Section-->
-<section class="team-section">
-    <div class="auto-container">
-        <!--Sec Title-->
-        <div class="sec-title light clearfix">
-            <div class="pull-left">
-                <h2>Notre Équipes</h2>
-                <div class="title-box">
-            
-            <div class="text-center"> Passionnés par les métiers de conseil, de formation et d'audit, nos experts et consultants sont essentiellement des lauréats de grandes écoles de management et d'ingénierie qui ont capitalisé des expertises et savoir-faire remarquables et dévoués à délivrer des prestations de hautes valeurs afin de satisfaire vos attentes conformément aux paramètres de qualité et de durées programmées de chaque mission.
-            <br> Notre équipe se compose de : <br>
-            <br>
-            <ul >
-                <li class="text-center">♣   Managing Patrner ♣   Consultants Juniors ♣   Consultants Seniors ♣   Chargé Support</li>
-            </ul>
-            <br>
-            <div class="text-center"> Nous disposons également d’un large réseau de professionnels spécialisés de sous-traitants et de formateurs-experts.</div>
-
-            </div>
-        </div>
-                <div class="separator"></div>
-            </div>
-            <div class="pull-right">
-                <!--<a href="blog.php" class="theme-btn btn-style-four">More News</a>-->
-            </div>
-        </div>
-        <div class="row clearfix">
-            <!--Team Block-->
-            <div class="team-block col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img <%= image_tag("images.jpg") %>/>
-                        <div class="overlay-box">
-                            <ul class="social-icon-two">
-                                <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>                                    
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Brown Angelino</h3>
-                        <div class="designation">President</div>
-                        <ul>
-                            <li>Ph: 900-789-0123</li>
-                            <li><a href="#">Email: Angelino@Triumph.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!--Team Block-->
-            <div class="team-block col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img <%= image_tag("ima.jpg") %> />
-                        <div class="overlay-box">
-                            <ul class="social-icon-two">
-                                <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>                                    
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Astley Fletcher</a></h3>
-                        <div class="designation">Founder</div>
-                        <ul>
-                            <li>Ph: 900-123-4567</li>
-                            <li><a href="#">Email: Fletcher@Triumph.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!--Team Block-->
-            <div class="team-block col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img <%= image_tag("imag.jpg") %> />
-                        <div class="overlay-box">
-                            <ul class="social-icon-two">
-                                <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>                                    
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Jones Antony</a></h3>
-                        <div class="designation">Team Leader</div>
-                        <ul>
-                            <li>Ph: 900-456-7890</li>
-                            <li><a href="#">Email: Antony@Triumph.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!--Team Block-->
-            <div class="team-block col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                <div class="inner-box">
-                    <div class="image">
-                        <img <%= image_tag("image.jpg") %>/>
-                        <div class="overlay-box">
-                            <ul class="social-icon-two">
-                                <li><a href="#"><span class="fa fa-facebook-f"></span></a></li>
-                                <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                                <li><a href="#"><span class="fa fa-google-plus"></span></a></li>                                    
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="#">Bernatt Rotty</a></h3>
-                        <div class="designation">Manager</div>
-                        <ul>
-                            <li>Ph: 900-789-0123</li>
-                            <li><a href="#">Email: Bernatt@Triumph.com</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-</section>
-<!--End Team Section-->
-
-<!--Business Section-->
-<section class="business-section">
-    <div class="auto-container">
-        <div class="title-box">
-            <h2>Trusted us by over <span class="theme_color">10,000</span> local businesses</h2>
-            <div class="text"> How all this mistaken idea of denouncing pleasure and praising pain was born and I will <br> you a complete account of the system expound.</div>
-        </div>
-        
-        <div class="text-center">
-            <a href="<%= new_user_registration_path %>" class="theme-btn btn-style-one">Inscrire</a>
-        </div>
-        
-    </div>
-</section>
-<!--End Business Section-->
-
-<!--Subscribe Style One-->
-<section class="subscribe-style-one" style="background:url(./assets/build/images/background/pattern-1.png);">
-    <div class="auto-container">
-        <div class="row clearfix">
-            <div class="col-md-5 col-sm-12 col-xs-12">
-                <h2>laissez nous un message</h2>
-                <div class="text"> notre équipe de support à la clientèle toujours prête à vous aider,</div>
-            </div>
-            <div class="col-md-7 col-sm-12 col-xs-12">
-                <form method="post" action="@contacts">
-                    <div class="form-group clearfix">
-                        <input type="email" name="email" value="" placeholder="Enter Email Address" required>
-                        <button href= "<%= contact_path %>" type="submit" class="theme-btn btn-style-one">Contacts</button>
-                    </div>
-                </form>
             </div>
         </div>
     </div>
-</section>
-<!--End Subscribe Style One-->
+
