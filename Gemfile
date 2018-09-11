@@ -41,6 +41,7 @@ gem 'acts-as-taggable-on', '~> 6.0'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 gem 'jquery-sliders-rails'
 gem 'fancybox2-rails'
+gem 'social-share-button', '~> 1.1'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'

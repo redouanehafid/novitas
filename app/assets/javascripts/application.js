@@ -15,6 +15,7 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery.sliders
+//= require social-share-button
 //= require_tree .
 
 
