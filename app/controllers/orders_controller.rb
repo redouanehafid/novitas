@@ -3,11 +3,11 @@ class OrdersController < ApplicationController
     before_action :authenticate_user!
 
     def new
-        @topformations = Formation.all.order("orders_count DESC").limit(3)
+        @topformations = Formation.enligne.all.order("orders_count DESC").limit(3)
         @order = Order.new
         @formation = Formation.find(params[:formation_id])
         @categories = Category.all
-        @nbrformation = Formation.count
+        @nbrformation = Formation.enligne.count
 
         @user = current_user
         @order.formation_id = @formation.id
