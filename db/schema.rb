@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_08_222643) do
+ActiveRecord::Schema.define(version: 2018_09_17_191033) do
+
+  create_table "carrieres", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "nom"
+    t.string "email"
+    t.string "sujet"
+    t.text "message"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "cv_file_name"
+    t.string "cv_content_type"
+    t.integer "cv_file_size"
+    t.datetime "cv_updated_at"
+    t.string "lettre_file_name"
+    t.string "lettre_content_type"
+    t.integer "lettre_file_size"
+    t.datetime "lettre_updated_at"
+  end
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"

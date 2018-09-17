@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Carrieres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Email</th>
+      <th>Sujet</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @carrieres.each do |carriere| %>
+      <tr>
+        <td><%= carriere.nom %></td>
+        <td><%= carriere.email %></td>
+        <td><%= carriere.sujet %></td>
+        <td><%= carriere.message %></td>
+        <td><%= link_to 'Show', carriere %></td>
+        <td><%= link_to 'Edit', edit_carriere_path(carriere) %></td>
+        <td><%= link_to 'Destroy', carriere, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Carriere', new_carriere_path %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :carrieres
   root 'pages#index'
 
   devise_for :users

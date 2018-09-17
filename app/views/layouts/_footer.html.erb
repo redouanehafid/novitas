@@ -29,7 +29,7 @@
                                 <% @formationsfooter.each do |formation| %>
                                     <li>
                                         <a href="<%= formation_path(formation.id) %>">
-                                            <%= truncate(formation.title, length: 40) %>
+                                            <%= truncate(formation.title, length: 25) %>
                                         </a>
                                     </li>
                                 <% end %>
