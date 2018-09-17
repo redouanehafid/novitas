@@ -52,7 +52,7 @@
                                 <div class="inner">
                                     <div class="imagepostfooter"><%= image_tag post.image.url(:thumb) %></div>
                                     <div class="post-date"><%= time_ago_in_words(post.created_at) %></div>
-                                    <div class="text textfooter"><a href="<%= post_path(post.id) %>"> <%= truncate(post.title, length: 40) %></a></div>
+                                    <div class="text textfooter"><a href="<%= post_path(post.id) %>"> <%= truncate(post.title, length: 20) %></a></div>
                                 </div>
                             </div>
 
