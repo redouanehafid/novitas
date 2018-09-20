@@ -37,4 +37,7 @@ class PagesController < ApplicationController
   def contact
   end
 
+  def novitas
+  end
+
 end

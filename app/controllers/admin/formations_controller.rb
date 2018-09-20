@@ -1,6 +1,6 @@
 class Admin::FormationsController < ApplicationController
 	before_action :authenticate_user!
-  before_action :is_admin?
+  	before_action :is_admin?
 	before_action :set_formation, only: [:show, :edit, :update, :destroy]
 	layout "applicationadmin"
 
@@ -18,10 +18,10 @@ class Admin::FormationsController < ApplicationController
 	def create
 		@formation = Formation.new(formation_params)
 		if @formation.save
-		  flash[:success] = "Object successfully created"
+		  flash[:success] = "Formation a été créée avec succès."
 		  redirect_to admin_formations_path
 		else
-		  flash[:error] = "Something went wrong"
+		  flash[:error] = "Quelque chose a mal tourné"
 		  render 'new'
 		end
 	end
@@ -31,20 +31,20 @@ class Admin::FormationsController < ApplicationController
 
 	def update
 		if @formation.update(formation_params)
-		  flash[:success] = "Object was successfully updated"
+		  flash[:success] = "Formation a été mis à jour avec succès."
 		  redirect_to admin_formations_path
 		else
-		  flash[:error] = "Something went wrong"
+		  flash[:error] = "Quelque chose a mal tourné"
 		  render 'edit'
 		end
 	end
 	
 	def destroy
 		if @formation.destroy
-			flash[:success] = 'Object was successfully deleted.'
+			flash[:success] = 'Formation a été détruite avec succès.'
 			redirect_to admin_formations_path
 		else
-			flash[:error] = 'Something went wrong'
+			flash[:error] = 'Quelque chose a mal tourné'
 			redirect_to admin_formations_path
 		end
 	end

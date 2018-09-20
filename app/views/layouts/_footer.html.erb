@@ -1,3 +1,25 @@
+<!--Subscribe Style One-->
+<section class="subscribe-style-one backnletters">
+    <div class="auto-container">
+        <div class="row clearfix">
+            <div class="col-md-5 col-sm-12 col-xs-12">
+                <h2>S'inscrire à la Newsletter</h2>
+                <div class="text">Inscrivez-vous aujourd'hui pour obtenir des conseils et les dernières nouvelles sur nos formation.</div>
+            </div>
+            <div class="col-md-7 col-sm-12 col-xs-12">
+                 <%= simple_form_for Newsletter.new do |f| %>
+                    <div class="form-group clearfix">
+                        <%= f.input :email, placeholder: "Entrez votre adresse email", label: false %>
+                        <%= f.button :submit, "Inscription", class: "theme-btn btn-style-one" %>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Subscribe Style One-->
+
+    
 
 <!--Main Footer-->
 <footer class="main-footer">
@@ -62,6 +84,8 @@
             
             </div>
         </div>
+
+        
         
        
     

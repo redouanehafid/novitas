@@ -1,10 +1,13 @@
-class CarrieresController < ApplicationController
+class Admin::CarrieresController < ApplicationController
+  before_action :authenticate_user!
+  before_action :is_admin?
   before_action :set_carriere, only: [:show, :edit, :update, :destroy]
+  layout "applicationadmin"
 
   # GET /carrieres
   # GET /carrieres.json
   def index
-    @carrieres = Carriere.all
+    @carrieres = Carriere.all.order("created_at DESC")
   end
 
   # GET /carrieres/1
@@ -28,7 +31,7 @@ class CarrieresController < ApplicationController
 
     respond_to do |format|
       if @carriere.save
-        format.html { redirect_to new_carriere_path, notice: 'La candidature a été créée avec succès.' }
+        format.html { redirect_to @carriere, notice: 'Carrière a été créée avec succès.' }
         format.json { render :show, status: :created, location: @carriere }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class CarrieresController < ApplicationController
   def update
     respond_to do |format|
       if @carriere.update(carriere_params)
-        format.html { redirect_to @carriere, notice: 'La candidature a été mis à jour avec succès.' }
+        format.html { redirect_to @carriere, notice: 'Carriere a été mis à jour avec succès.' }
         format.json { render :show, status: :ok, location: @carriere }
       else
         format.html { render :edit }
@@ -56,8 +59,7 @@ class CarrieresController < ApplicationController
   def destroy
     @carriere.destroy
     respond_to do |format|
-      format.html { redirect_to carrieres_url, notice: 'La candidature a été détruite avec succès.' }
-      format.json { head :no_content }
+      format.html { redirect_to admin_carrieres_path, notice: 'Carrière a été détruite avec succès.' }
     end
   end
 

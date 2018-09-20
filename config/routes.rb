@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :carrieres
+
   root 'pages#index'
 
   devise_for :users
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     resources :categories
     resources :formations
     resources :orders
+    resources :newsletters
+    resources :carrieres
   	resources :posts do
   	  resources :comments
     end
@@ -22,12 +24,15 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :newsletters, only: [:new, :create]
+  resources :carrieres, only: [:new, :create]
+
   get 'tags/:tag', to: 'pages#formations', as: :tag
   get 'articles' => 'pages#articles'
   get 'formations' => 'pages#formations'
   get 'apropos' => 'pages#apropos'
   get 'expertise' => 'pages#expertise'
   get 'contact' => 'pages#contact'
-  get 'optima' => 'pages#optima'
+  get 'novitas' => 'pages#novitas'
 
 end

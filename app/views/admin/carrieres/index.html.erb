@@ -1,0 +1,28 @@
+
+<h1>les condidatures</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Email</th>
+      <th scope="col">Sujet</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @carrieres.each do |carriere| %>
+        <tr>
+            <th scope="col"><%= carriere.nom %></th>
+            <th scope="col"><%= carriere.email %></th>
+            <th scope="col"><%= truncate(carriere.sujet, length: 30) %></th>
+            <th scope="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <%= link_to "Voir", admin_carriere_path(carriere), class:"btn btn-secondary" %>
+                    <%= link_to "Supprimer", admin_carriere_path(carriere),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
+                </div>
+            </th>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

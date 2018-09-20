@@ -1,0 +1,4 @@
+<%= simple_form_for [:admin, @newsletter] do |f| %>
+<%= f.input :email %>
+<%= f.button :submit, @newsletter.new_record? ? "Ajouter" : "Modifier", class: "btn btn-primary" %>
+<% end %>

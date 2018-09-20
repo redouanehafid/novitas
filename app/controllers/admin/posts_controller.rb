@@ -1,6 +1,6 @@
 class Admin::PostsController < ApplicationController
 	before_action :authenticate_user!
-  before_action :is_admin?
+  	before_action :is_admin?
 	before_action :set_post, only: [:show, :edit, :update, :destroy]
 	layout "applicationadmin"
 
@@ -18,10 +18,10 @@ class Admin::PostsController < ApplicationController
 	def create
 		@post = Post.new(post_params)
 		if @post.save
-		  flash[:success] = "Object successfully created"
+		  flash[:success] = "L'article a été créée avec succès."
 		  redirect_to admin_posts_path
 		else
-		  flash[:error] = "Something went wrong"
+		  flash[:error] = "Quelque chose a mal tourné"
 		  render 'new'
 		end
 	end
@@ -31,20 +31,20 @@ class Admin::PostsController < ApplicationController
 
 	def update
 		if @post.update(post_params)
-		  flash[:success] = "Object was successfully updated"
+		  flash[:success] = "L'article a été mis à jour avec succès."
 		  redirect_to admin_posts_path
 		else
-		  flash[:error] = "Something went wrong"
+		  flash[:error] = "Quelque chose a mal tourné"
 		  render 'edit'
 		end
 	end
 	
 	def destroy
 		if @post.destroy
-			flash[:success] = 'Object was successfully deleted.'
+			flash[:success] = "L'article a été détruite avec succès."
 			redirect_to admin_posts_path
 		else
-			flash[:error] = 'Something went wrong'
+			flash[:error] = 'Quelque chose a mal tourné'
 			redirect_to admin_posts_path
 		end
 	end

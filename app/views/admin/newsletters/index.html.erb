@@ -1,0 +1,23 @@
+<h1>Newsletters</h1>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Email</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @newsletters.each do |newsletter| %>
+        <tr>
+            <th scope="col"><%= newsletter.email %></th>
+            <th scope="col">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                    <%= link_to "Modifier", edit_admin_newsletter_path(newsletter), class:"btn btn-secondary" %>
+                    <%= link_to "Supprimer", admin_newsletter_path(newsletter),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
+                </div>
+            </th>
+        </tr>
+    <% end %>
+  </tbody>
+</table>

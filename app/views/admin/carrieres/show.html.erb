@@ -1,0 +1,38 @@
+<p>
+  <strong>Nom:</strong>
+  <%= @carriere.nom %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @carriere.email %>
+</p>
+
+<p>
+  <strong>Sujet:</strong>
+  <%= @carriere.sujet %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @carriere.message %>
+</p>
+
+<% if @carriere.cv.url != "/cvs/original/missing.png" %>
+<p>
+  <strong>Telecharger le CV:</strong>
+  <%= link_to "CV", @carriere.cv.url(:original), class: "btn btn-info" %>
+</p>
+<% end %>
+
+<% if @carriere.cv.url != "/cvs/original/missing.png" %>
+<p>
+  <strong>Telecharger la lettre de motivation:</strong>
+  <%= link_to "Lettre",@carriere.lettre.url(:original), class: "btn btn-info" %>
+</p>
+<% end %>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+    <%= link_to "Tous les condidatures", admin_carrieres_path, class:"btn btn-secondary" %>
+    <%= link_to "Supprimer", admin_carriere_path(@carriere),method: :delete, data: { confirm: 'Vous êtes sûr?' }, class:"btn btn-danger" %>
+</div>
