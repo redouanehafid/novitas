@@ -31,13 +31,24 @@ class PagesController < ApplicationController
 
   def apropos
   end
+
   def expertise
+  end
+
+  def novitas
   end
 
   def contact
   end
 
-  def novitas
+  def sendmail
+    thename = params[:username]
+    from = params[:email]
+    subject = params[:subject]
+    message = params[:message]
+    ContactMailer.send_contact(thename,from,subject,message).deliver_now
   end
+
+
 
 end

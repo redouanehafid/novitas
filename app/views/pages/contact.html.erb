@@ -58,7 +58,7 @@
             <!--Form Column-->
             <div class="form-column col-md-8 col-sm-12 col-xs-12">
                 <div class="contact-form">
-                    <form method="post" action="sendemail.php">
+                 <%= form_tag('/contact') do %>
                         <div class="row clearfix">
                             <div class="col-md-6 col-sm-6 col-xs-12 form-group">
                                 <label>Nom*</label>
@@ -83,7 +83,7 @@
                             </div>
                             
                         </div>
-                    </form>
+                    <% end %>
                 </div>
             </div>
         </div>
