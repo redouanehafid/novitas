@@ -49,6 +49,12 @@ class PagesController < ApplicationController
     ContactMailer.send_contact(thename,from,subject,message).deliver_now
   end
 
+  def test
+  end
+
+  def appropos
+  end
+
 
 
 end

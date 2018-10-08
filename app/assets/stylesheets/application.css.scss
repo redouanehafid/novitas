@@ -36,10 +36,21 @@
 	background-image: image-url("page-background.jpg");
 }
 .indexentete {
+  z-index: 998;
     background: linear-gradient(
       rgba(0, 0, 0, 0.45), 
       rgba(0, 0, 0, 0.45)
     ),image-url("home-background.jpg");
+    background-size:cover;
+    background-repeat:no-repeat;
+    height: 600px;
+}
+.indexentete1 {
+  z-index: 999;
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.45), 
+      rgba(0, 0, 0, 0.45)
+    ),image-url("page-background.jpg");
     background-size:cover;
     background-repeat:no-repeat;
     height: 600px;
@@ -52,6 +63,15 @@
 }
 .backnletters {
   background-image: image-url("pattern-1.png");
+}
+.back1 {
+  background-image: image-url("page-background.jpg");
+}
+.back2 {
+  background-image: image-url("page-background.jpg");
+}
+.back3 {
+  background-image: image-url("page-background.jpg");
 }
 
 @import 'olive-theme.css.scss';
@@ -76,3 +96,10 @@
 .search-btn-Costum {
   margin-top: 13px;
 }
+
+.clearfix:after, #header:after, #header .header-holder:after, #nav:after, .main-slider .slide .caption:after, .main-slider .slide .btn-holder:after, .service-sec:after, .project-sec:after, .help-sec:after, .shop-list .drop-down:after, .shop-list .shop:after, .shop-detail .shop:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+

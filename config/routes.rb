@@ -35,5 +35,7 @@ Rails.application.routes.draw do
   get 'novitas' => 'pages#novitas'
   get 'contact' => 'pages#contact'
   post 'contact' => 'pages#sendmail'
+  get 'test' => 'pages#test'
+  get 'appropos' => 'pages#appropos'
 
 end
