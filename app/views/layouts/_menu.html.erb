@@ -112,7 +112,7 @@
                                     <li><a href="<%= apropos_path(p: "nos-valeurs") %>">Nos valeurs</a></li>
                                 </ul>
                             </li>
-                            <li class="dropdown <%="current" if yield(:titre) == "expertise" %>"><a href="#">Expertises et métiers</a>
+                            <li class="dropdown <%="current" if yield(:titre) == "expertise" %>"><a href="#">Nos expertises et métiers</a>
                                 <ul>
                                     <li><a href="<%= expertise_path(p: "nos-expertises-et-metiers") %>">Nos expertises et métiers</a></li>
                                     <li><a href="<%= expertise_path(p: "consulting") %>">Consulting</a></li>
@@ -199,7 +199,7 @@
                             </li>
                             <li class="dropdown <%="current" if yield(:titre) == "expertise" %>"><a href="#">Expertises et métiers</a>
                                 <ul>
-                                    <li><a href="<%= expertise_path(p: "nos-expertises-et-metiers") %>">Nos expertises et métiers</a></li>
+                                    <li><a href="<%= expertise_path %>">Nos expertises et métiers</a></li>
                                     <li><a href="<%= expertise_path(p: "consulting") %>">Consulting</a></li>
                                     <li><a href="<%= expertise_path(p: "audit-financial") %>">Audit &amp; Financial advisory</a></li>
                                     <li><a href="<%= expertise_path(p: "formation-et-rh-management") %>">Formation &amp; RH Management Advisory</a></li>

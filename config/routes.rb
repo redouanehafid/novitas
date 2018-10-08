@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get 'formations' => 'pages#formations'
   get 'apropos' => 'pages#apropos'
   get 'expertise' => 'pages#expertise'
+  get 'expertisemetier' => 'pages#expertisemetier'
   get 'novitas' => 'pages#novitas'
   get 'contact' => 'pages#contact'
   post 'contact' => 'pages#sendmail'

@@ -1,0 +1,87 @@
+  <% provide(:titre , "expertise") %>
+
+ <section class="page-title imgBack">
+        <div class="auto-container">
+        <% if params[:p].present? && params[:p] == "consulting" %>
+            <h1>Consulting</h1>
+        <% elsif params[:p].present? && params[:p] == "audit-financial" %>
+            <h1>Audit &amp; Financial advisory</h1>
+        <% elsif params[:p].present? && params[:p] == "formation-et-rh-management" %>
+            <h1>Formation &amp; RH Management Advisory</h1>
+        <% elsif params[:p].present? && params[:p] == "tax-legal" %>
+           <h1>Tax &amp; Legal</h1>
+        <% else %>
+           <h1>Nos expertises et métiers</h1>
+        <% end %>
+    
+        </div>
+        <!--Page Info-->
+        <div class="page-info">
+            <div class="auto-container clearfix">
+                <div class="pull-left">
+                </div>
+            </div>
+        </div>
+        <!--End Page Info-->
+    </section>
+    <!--End Page Title-->
+
+
+ <!-- Hero-area -->
+<div class="hero-area section">
+
+	<!-- Backgound Image -->
+	<div class="bg-image bg-parallax overlay monentete"></div>
+	<!-- /Backgound Image -->
+
+	
+
+</div>
+<!-- /Hero-area -->
+<br>
+
+
+
+
+<!--Sidebar Page Container-->
+    <div class="sidebar-page-container">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+            	
+                <!--Sidebar Side-->
+                <div class="sidebar-side no-border col-lg-3 col-md-4 col-sm-12 col-xs-12">
+                	<aside class="sidebar default-sidebar">
+						
+                        <!-- Sidebar Category -->
+                        <div class="sidebar-widget sidebar-category">
+                            <ul class="list">
+                                <li class="<%= "current" if params[:p] == "nos-expertises-et-metiers" || !params[:p].present? %>"><a href="<%= expertise_path(p: "nos-expertises-et-metiers") %>">Nos expertises et métiers</a></li>
+                                <li class="<%= "current" if params[:p] == "consulting" %>"><a href="<%= expertise_path(p: "consulting") %>">Consulting</a></li>
+                                <li class="<%= "current" if params[:p] == "audit-financial" %>"><a href="<%= expertise_path(p: "audit-financial") %>">Audit &amp; Financial advisory</a></li>
+                                <li class="<%= "current" if params[:p] == "formation-et-rh-management" %>"><a href="<%= expertise_path(p: "formation-et-rh-management") %>">Formation &amp; RH</a></li>
+                                <li class="<%= "current" if params[:p] == "tax-legal" %>"><a href="<%= expertise_path(p: "tax-legal") %>">Tax &amp; Legal</a></li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+                
+                <!--Content Side-->
+                <div class="content-side col-lg-9 col-md-8 col-sm-12 col-xs-12">
+					<!--Services Single One-->
+                    <% if params[:p].present? && params[:p] == "consulting" %>
+                        <%= render "pages/expertise/consulting" %>
+                    <% elsif params[:p].present? && params[:p] == "audit-financial" %>
+                        <%= render "pages/expertise/audit" %>
+                    <% elsif params[:p].present? && params[:p] == "formation-et-rh-management" %>
+                        <%= render "pages/expertise/rh" %>
+                    <% elsif params[:p].present? && params[:p] == "tax-legal" %>
+                        <%= render "pages/expertise/tax" %>
+                    <% else %>
+                        <%= render "pages/expertise/expertise" %>
+                    <% end %>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+

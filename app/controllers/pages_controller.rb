@@ -34,6 +34,8 @@ class PagesController < ApplicationController
 
   def expertise
   end
+  def expertisemetier
+  end
 
   def novitas
   end
