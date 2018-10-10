@@ -36,15 +36,14 @@
 
 </div>
 <!-- /Hero-area -->
-<br>
-
 
 
 
 <!--Sidebar Page Container-->
-    <div class="sidebar-page-container">
+    <div class="">
     	<div class="auto-container">
         	<div class="row clearfix">
+                 <% if params[:p].present? && (params[:p] == "notre-equipe" || params[:p] == "nos-missions-et-visions" || params[:p] == "nos-valeurs") %>
             	
                 <!--Sidebar Side-->
                 <div class="sidebar-side no-border col-lg-3 col-md-4 col-sm-12 col-xs-12">
@@ -61,9 +60,17 @@
                         </div>
                     </aside>
                 </div>
+                <% end %>
+
+
+                <% if params[:p].present? && (params[:p] == "notre-equipe" || params[:p] == "nos-missions-et-visions" || params[:p] == "nos-valeurs") %>
+                   <div class="content-side col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                <% else %>
+                   <div class="content-side col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <% end %>
                 
                 <!--Content Side-->
-                <div class="content-side col-lg-9 col-md-8 col-sm-12 col-xs-12">
+                
 					<!--Services Single One-->
                     <% if params[:p].present? && params[:p] == "notre-equipe" %>
                         <%= render "pages/about/equipe" %>
@@ -74,7 +81,7 @@
                     <% else %>
                         <%= render "pages/about/about" %>
                     <% end %>
-                </div>
+               
                 
             </div>
         </div>

@@ -19,7 +19,11 @@
  @import "social-share-button";
  @import "font-awesome";
  
- #tag_cloud {
+.logo {
+  max-width: 150px
+}
+
+#tag_cloud {
      .s {font-size: 0.7em }
      .m {font-size: 1em }
      .l {font-size: 1.4em }
